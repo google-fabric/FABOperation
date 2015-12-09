@@ -15,6 +15,8 @@
 		E6998C901B6852DA0018AFFC /* CLSCompoundAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8B1B6852DA0018AFFC /* CLSCompoundAsyncOperation.h */; };
 		E6998C911B6852DA0018AFFC /* CLSCompoundAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* CLSCompoundAsyncOperation.m */; };
 		E6998C921B6852DA0018AFFC /* CLSQueueAwareOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8D1B6852DA0018AFFC /* CLSQueueAwareOperation.h */; };
+		E6A2960C1C10D35200F82D06 /* CLSAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8A1B6852DA0018AFFC /* CLSAsyncOperation.m */; };
+		E6A2960D1C10D35400F82D06 /* CLSCompoundAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* CLSCompoundAsyncOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 		E6998C8B1B6852DA0018AFFC /* CLSCompoundAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSCompoundAsyncOperation.h; sourceTree = "<group>"; };
 		E6998C8C1B6852DA0018AFFC /* CLSCompoundAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSCompoundAsyncOperation.m; sourceTree = "<group>"; };
 		E6998C8D1B6852DA0018AFFC /* CLSQueueAwareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSQueueAwareOperation.h; sourceTree = "<group>"; };
+		E6A296031C10D33800F82D06 /* libCLSAsyncOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCLSAsyncOperation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6998C791B6852BE0018AFFC /* CLSAsyncOperation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6A296001C10D33800F82D06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +84,7 @@
 			children = (
 				E6998C6D1B6852BE0018AFFC /* CLSAsyncOperation.framework */,
 				E6998C781B6852BE0018AFFC /* CLSAsyncOperationTests.xctest */,
+				E6A296031C10D33800F82D06 /* libCLSAsyncOperation.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +142,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6A296011C10D33800F82D06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -170,6 +188,23 @@
 			productReference = E6998C781B6852BE0018AFFC /* CLSAsyncOperationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E6A296021C10D33800F82D06 /* libCLSAsyncOperation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6A2960B1C10D33800F82D06 /* Build configuration list for PBXNativeTarget "libCLSAsyncOperation" */;
+			buildPhases = (
+				E6A295FF1C10D33800F82D06 /* Sources */,
+				E6A296001C10D33800F82D06 /* Frameworks */,
+				E6A296011C10D33800F82D06 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libCLSAsyncOperation;
+			productName = libCLSAsyncOperation;
+			productReference = E6A296031C10D33800F82D06 /* libCLSAsyncOperation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -185,6 +220,9 @@
 					};
 					E6998C771B6852BE0018AFFC = {
 						CreatedOnToolsVersion = 6.4;
+					};
+					E6A296021C10D33800F82D06 = {
+						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
@@ -202,6 +240,7 @@
 			targets = (
 				E6998C6C1B6852BE0018AFFC /* CLSAsyncOperation */,
 				E6998C771B6852BE0018AFFC /* CLSAsyncOperationTests */,
+				E6A296021C10D33800F82D06 /* libCLSAsyncOperation */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +280,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6A295FF1C10D33800F82D06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A2960C1C10D35200F82D06 /* CLSAsyncOperation.m in Sources */,
+				E6A2960D1C10D35400F82D06 /* CLSCompoundAsyncOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -270,8 +318,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_CURRENT_VERSION = 2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -294,7 +342,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -316,8 +363,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_CURRENT_VERSION = 2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -332,7 +379,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -406,6 +452,27 @@
 			};
 			name = Release;
 		};
+		E6A296091C10D33800F82D06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				ENABLE_TESTABILITY = YES;
+				EXECUTABLE_PREFIX = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E6A2960A1C10D33800F82D06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				EXECUTABLE_PREFIX = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -432,6 +499,15 @@
 			buildConfigurations = (
 				E6998C871B6852BE0018AFFC /* Debug */,
 				E6998C881B6852BE0018AFFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6A2960B1C10D33800F82D06 /* Build configuration list for PBXNativeTarget "libCLSAsyncOperation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6A296091C10D33800F82D06 /* Debug */,
+				E6A2960A1C10D33800F82D06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
