@@ -1,19 +1,19 @@
 //
-//  CLSAsyncOperationTests.m
-//  CLSAsyncOperationTests
+//  FABOperationTests.m
+//  FABOperationTests
 //
 //  Created by Andrew McKnight on 7/28/15.
-//  Copyright (c) 2015 Twitter. All rights reserved.
+//  Copyright © 2015 Twitter. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 
-@interface CLSAsyncOperationTests : XCTestCase
+@interface FABOperationTests : XCTestCase
 
 @end
 
-@implementation CLSAsyncOperationTests
+@implementation FABOperationTests
 
 - (void)setUp {
     [super setUp];
