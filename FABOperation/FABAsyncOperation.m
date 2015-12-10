@@ -1,14 +1,13 @@
 //
-//  CLSAsyncOperation.m
-//  CrashlyticsKit
+//  FABAsyncOperation.m
+//  FABOperation
 //
-//  Created by Matt Massicotte on 12/7/14.
-//  Copyright (c) 2014 Twitter. All rights reserved.
+//  Copyright © 2015 Twitter. All rights reserved.
 //
 
-#import "CLSAsyncOperation.h"
+#import "FABAsyncOperation.h"
 
-@interface CLSAsyncOperation () {
+@interface FABAsyncOperation () {
     BOOL _internalExecuting;
     BOOL _internalFinished;
 }
@@ -17,7 +16,7 @@
 
 @end
 
-@implementation CLSAsyncOperation
+@implementation FABAsyncOperation
 
 - (instancetype)init {
     self = [super init];

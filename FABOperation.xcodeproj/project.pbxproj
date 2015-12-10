@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E6998C731B6852BE0018AFFC /* CLSAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C721B6852BE0018AFFC /* CLSAsyncOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6998C791B6852BE0018AFFC /* CLSAsyncOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* CLSAsyncOperation.framework */; };
-		E6998C801B6852BE0018AFFC /* CLSAsyncOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C7F1B6852BE0018AFFC /* CLSAsyncOperationTests.m */; };
-		E6998C8E1B6852DA0018AFFC /* CLSAsyncOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C891B6852DA0018AFFC /* CLSAsyncOperation_Private.h */; };
-		E6998C8F1B6852DA0018AFFC /* CLSAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8A1B6852DA0018AFFC /* CLSAsyncOperation.m */; };
-		E6998C901B6852DA0018AFFC /* CLSCompoundAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8B1B6852DA0018AFFC /* CLSCompoundAsyncOperation.h */; };
-		E6998C911B6852DA0018AFFC /* CLSCompoundAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* CLSCompoundAsyncOperation.m */; };
-		E6998C921B6852DA0018AFFC /* CLSQueueAwareOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8D1B6852DA0018AFFC /* CLSQueueAwareOperation.h */; };
-		E6A2960C1C10D35200F82D06 /* CLSAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8A1B6852DA0018AFFC /* CLSAsyncOperation.m */; };
-		E6A2960D1C10D35400F82D06 /* CLSCompoundAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* CLSCompoundAsyncOperation.m */; };
+		E6998C731B6852BE0018AFFC /* FABAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */; };
+		E6998C791B6852BE0018AFFC /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
+		E6998C801B6852BE0018AFFC /* FABOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C7F1B6852BE0018AFFC /* FABOperationTests.m */; };
+		E6998C8E1B6852DA0018AFFC /* FABAsyncOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C891B6852DA0018AFFC /* FABAsyncOperation_Private.h */; };
+		E6998C8F1B6852DA0018AFFC /* FABAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */; };
+		E6998C901B6852DA0018AFFC /* FABCompoundOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */; };
+		E6998C911B6852DA0018AFFC /* FABCompoundOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */; };
+		E6998C921B6852DA0018AFFC /* FABQueueAwareOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8D1B6852DA0018AFFC /* FABQueueAwareOperation.h */; };
+		E6A2960C1C10D35200F82D06 /* FABAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */; };
+		E6A2960D1C10D35400F82D06 /* FABCompoundOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */; };
+		E6CD308E1C1A040500EAD3B2 /* FABOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CD308D1C1A040500EAD3B2 /* FABOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,18 +31,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E6998C6D1B6852BE0018AFFC /* CLSAsyncOperation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLSAsyncOperation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6998C6D1B6852BE0018AFFC /* FABOperation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FABOperation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6998C711B6852BE0018AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6998C721B6852BE0018AFFC /* CLSAsyncOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSAsyncOperation.h; sourceTree = "<group>"; };
-		E6998C781B6852BE0018AFFC /* CLSAsyncOperationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLSAsyncOperationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FABAsyncOperation.h; sourceTree = "<group>"; };
+		E6998C781B6852BE0018AFFC /* FABOperation.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FABOperation.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6998C7E1B6852BE0018AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6998C7F1B6852BE0018AFFC /* CLSAsyncOperationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSAsyncOperationTests.m; sourceTree = "<group>"; };
-		E6998C891B6852DA0018AFFC /* CLSAsyncOperation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSAsyncOperation_Private.h; sourceTree = "<group>"; };
-		E6998C8A1B6852DA0018AFFC /* CLSAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSAsyncOperation.m; sourceTree = "<group>"; };
-		E6998C8B1B6852DA0018AFFC /* CLSCompoundAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSCompoundAsyncOperation.h; sourceTree = "<group>"; };
-		E6998C8C1B6852DA0018AFFC /* CLSCompoundAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSCompoundAsyncOperation.m; sourceTree = "<group>"; };
-		E6998C8D1B6852DA0018AFFC /* CLSQueueAwareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSQueueAwareOperation.h; sourceTree = "<group>"; };
-		E6A296031C10D33800F82D06 /* libCLSAsyncOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCLSAsyncOperation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6998C7F1B6852BE0018AFFC /* FABOperationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FABOperationTests.m; sourceTree = "<group>"; };
+		E6998C891B6852DA0018AFFC /* FABAsyncOperation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABAsyncOperation_Private.h; sourceTree = "<group>"; };
+		E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABAsyncOperation.m; sourceTree = "<group>"; };
+		E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABCompoundOperation.h; sourceTree = "<group>"; };
+		E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABCompoundOperation.m; sourceTree = "<group>"; };
+		E6998C8D1B6852DA0018AFFC /* FABQueueAwareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABQueueAwareOperation.h; sourceTree = "<group>"; };
+		E6A296031C10D33800F82D06 /* FABOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = FABOperation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6CD308D1C1A040500EAD3B2 /* FABOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABOperation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6998C791B6852BE0018AFFC /* CLSAsyncOperation.framework in Frameworks */,
+				E6998C791B6852BE0018AFFC /* FABOperation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +75,8 @@
 		E6998C631B6852BE0018AFFC = {
 			isa = PBXGroup;
 			children = (
-				E6998C6F1B6852BE0018AFFC /* CLSAsyncOperation */,
-				E6998C7C1B6852BE0018AFFC /* CLSAsyncOperationTests */,
+				E6998C6F1B6852BE0018AFFC /* FABOperation */,
+				E6998C7C1B6852BE0018AFFC /* FABOperationTests */,
 				E6998C6E1B6852BE0018AFFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,25 +84,26 @@
 		E6998C6E1B6852BE0018AFFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E6998C6D1B6852BE0018AFFC /* CLSAsyncOperation.framework */,
-				E6998C781B6852BE0018AFFC /* CLSAsyncOperationTests.xctest */,
-				E6A296031C10D33800F82D06 /* libCLSAsyncOperation.a */,
+				E6998C6D1B6852BE0018AFFC /* FABOperation.framework */,
+				E6998C781B6852BE0018AFFC /* FABOperation.xctest */,
+				E6A296031C10D33800F82D06 /* FABOperation.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E6998C6F1B6852BE0018AFFC /* CLSAsyncOperation */ = {
+		E6998C6F1B6852BE0018AFFC /* FABOperation */ = {
 			isa = PBXGroup;
 			children = (
-				E6998C721B6852BE0018AFFC /* CLSAsyncOperation.h */,
-				E6998C891B6852DA0018AFFC /* CLSAsyncOperation_Private.h */,
-				E6998C8A1B6852DA0018AFFC /* CLSAsyncOperation.m */,
-				E6998C8B1B6852DA0018AFFC /* CLSCompoundAsyncOperation.h */,
-				E6998C8C1B6852DA0018AFFC /* CLSCompoundAsyncOperation.m */,
-				E6998C8D1B6852DA0018AFFC /* CLSQueueAwareOperation.h */,
+				E6CD308D1C1A040500EAD3B2 /* FABOperation.h */,
+				E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */,
+				E6998C891B6852DA0018AFFC /* FABAsyncOperation_Private.h */,
+				E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */,
+				E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */,
+				E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */,
+				E6998C8D1B6852DA0018AFFC /* FABQueueAwareOperation.h */,
 				E6998C701B6852BE0018AFFC /* Supporting Files */,
 			);
-			path = CLSAsyncOperation;
+			path = FABOperation;
 			sourceTree = "<group>";
 		};
 		E6998C701B6852BE0018AFFC /* Supporting Files */ = {
@@ -111,13 +114,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E6998C7C1B6852BE0018AFFC /* CLSAsyncOperationTests */ = {
+		E6998C7C1B6852BE0018AFFC /* FABOperationTests */ = {
 			isa = PBXGroup;
 			children = (
-				E6998C7F1B6852BE0018AFFC /* CLSAsyncOperationTests.m */,
+				E6998C7F1B6852BE0018AFFC /* FABOperationTests.m */,
 				E6998C7D1B6852BE0018AFFC /* Supporting Files */,
 			);
-			path = CLSAsyncOperationTests;
+			path = FABOperationTests;
 			sourceTree = "<group>";
 		};
 		E6998C7D1B6852BE0018AFFC /* Supporting Files */ = {
@@ -135,10 +138,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6998C8E1B6852DA0018AFFC /* CLSAsyncOperation_Private.h in Headers */,
-				E6998C731B6852BE0018AFFC /* CLSAsyncOperation.h in Headers */,
-				E6998C921B6852DA0018AFFC /* CLSQueueAwareOperation.h in Headers */,
-				E6998C901B6852DA0018AFFC /* CLSCompoundAsyncOperation.h in Headers */,
+				E6CD308E1C1A040500EAD3B2 /* FABOperation.h in Headers */,
+				E6998C8E1B6852DA0018AFFC /* FABAsyncOperation_Private.h in Headers */,
+				E6998C731B6852BE0018AFFC /* FABAsyncOperation.h in Headers */,
+				E6998C921B6852DA0018AFFC /* FABQueueAwareOperation.h in Headers */,
+				E6998C901B6852DA0018AFFC /* FABCompoundOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,9 +156,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E6998C6C1B6852BE0018AFFC /* CLSAsyncOperation */ = {
+		E6998C6C1B6852BE0018AFFC /* FABOperation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6998C831B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "CLSAsyncOperation" */;
+			buildConfigurationList = E6998C831B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "FABOperation" */;
 			buildPhases = (
 				E6998C681B6852BE0018AFFC /* Sources */,
 				E6998C691B6852BE0018AFFC /* Frameworks */,
@@ -165,14 +169,14 @@
 			);
 			dependencies = (
 			);
-			name = CLSAsyncOperation;
+			name = FABOperation;
 			productName = CLSAsyncOperation;
-			productReference = E6998C6D1B6852BE0018AFFC /* CLSAsyncOperation.framework */;
+			productReference = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E6998C771B6852BE0018AFFC /* CLSAsyncOperationTests */ = {
+		E6998C771B6852BE0018AFFC /* FABOperationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6998C861B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "CLSAsyncOperationTests" */;
+			buildConfigurationList = E6998C861B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "FABOperationTests" */;
 			buildPhases = (
 				E6998C741B6852BE0018AFFC /* Sources */,
 				E6998C751B6852BE0018AFFC /* Frameworks */,
@@ -183,14 +187,14 @@
 			dependencies = (
 				E6998C7B1B6852BE0018AFFC /* PBXTargetDependency */,
 			);
-			name = CLSAsyncOperationTests;
+			name = FABOperationTests;
 			productName = CLSAsyncOperationTests;
-			productReference = E6998C781B6852BE0018AFFC /* CLSAsyncOperationTests.xctest */;
+			productReference = E6998C781B6852BE0018AFFC /* FABOperation.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E6A296021C10D33800F82D06 /* libCLSAsyncOperation */ = {
+		E6A296021C10D33800F82D06 /* libFABOperation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6A2960B1C10D33800F82D06 /* Build configuration list for PBXNativeTarget "libCLSAsyncOperation" */;
+			buildConfigurationList = E6A2960B1C10D33800F82D06 /* Build configuration list for PBXNativeTarget "libFABOperation" */;
 			buildPhases = (
 				E6A295FF1C10D33800F82D06 /* Sources */,
 				E6A296001C10D33800F82D06 /* Frameworks */,
@@ -200,9 +204,9 @@
 			);
 			dependencies = (
 			);
-			name = libCLSAsyncOperation;
+			name = libFABOperation;
 			productName = libCLSAsyncOperation;
-			productReference = E6A296031C10D33800F82D06 /* libCLSAsyncOperation.a */;
+			productReference = E6A296031C10D33800F82D06 /* FABOperation.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -211,9 +215,9 @@
 		E6998C641B6852BE0018AFFC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CLS;
+				CLASSPREFIX = FAB;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = Crashlytics;
+				ORGANIZATIONNAME = Twitter;
 				TargetAttributes = {
 					E6998C6C1B6852BE0018AFFC = {
 						CreatedOnToolsVersion = 6.4;
@@ -226,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E6998C671B6852BE0018AFFC /* Build configuration list for PBXProject "CLSAsyncOperation" */;
+			buildConfigurationList = E6998C671B6852BE0018AFFC /* Build configuration list for PBXProject "FABOperation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -238,9 +242,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E6998C6C1B6852BE0018AFFC /* CLSAsyncOperation */,
-				E6998C771B6852BE0018AFFC /* CLSAsyncOperationTests */,
-				E6A296021C10D33800F82D06 /* libCLSAsyncOperation */,
+				E6998C6C1B6852BE0018AFFC /* FABOperation */,
+				E6998C771B6852BE0018AFFC /* FABOperationTests */,
+				E6A296021C10D33800F82D06 /* libFABOperation */,
 			);
 		};
 /* End PBXProject section */
@@ -267,8 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6998C911B6852DA0018AFFC /* CLSCompoundAsyncOperation.m in Sources */,
-				E6998C8F1B6852DA0018AFFC /* CLSAsyncOperation.m in Sources */,
+				E6998C911B6852DA0018AFFC /* FABCompoundOperation.m in Sources */,
+				E6998C8F1B6852DA0018AFFC /* FABAsyncOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6998C801B6852BE0018AFFC /* CLSAsyncOperationTests.m in Sources */,
+				E6998C801B6852BE0018AFFC /* FABOperationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A2960C1C10D35200F82D06 /* CLSAsyncOperation.m in Sources */,
-				E6A2960D1C10D35400F82D06 /* CLSCompoundAsyncOperation.m in Sources */,
+				E6A2960C1C10D35200F82D06 /* FABAsyncOperation.m in Sources */,
+				E6A2960D1C10D35400F82D06 /* FABCompoundOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +298,7 @@
 /* Begin PBXTargetDependency section */
 		E6998C7B1B6852BE0018AFFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E6998C6C1B6852BE0018AFFC /* CLSAsyncOperation */;
+			target = E6998C6C1B6852BE0018AFFC /* FABOperation */;
 			targetProxy = E6998C7A1B6852BE0018AFFC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -319,7 +323,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_CURRENT_VERSION = 2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -364,7 +369,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_CURRENT_VERSION = 2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -388,14 +394,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = CLSAsyncOperation/Info.plist;
+				INFOPLIST_FILE = FABOperation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FABOperation;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -406,14 +410,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = CLSAsyncOperation/Info.plist;
+				INFOPLIST_FILE = FABOperation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FABOperation;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -430,10 +432,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CLSAsyncOperationTests/Info.plist;
+				INFOPLIST_FILE = FABOperationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FABOperation;
 			};
 			name = Debug;
 		};
@@ -445,10 +447,10 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CLSAsyncOperationTests/Info.plist;
+				INFOPLIST_FILE = FABOperationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FABOperation;
 			};
 			name = Release;
 		};
@@ -459,7 +461,7 @@
 				ENABLE_TESTABILITY = YES;
 				EXECUTABLE_PREFIX = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FABOperation;
 			};
 			name = Debug;
 		};
@@ -469,14 +471,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				EXECUTABLE_PREFIX = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FABOperation;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E6998C671B6852BE0018AFFC /* Build configuration list for PBXProject "CLSAsyncOperation" */ = {
+		E6998C671B6852BE0018AFFC /* Build configuration list for PBXProject "FABOperation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6998C811B6852BE0018AFFC /* Debug */,
@@ -485,7 +487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6998C831B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "CLSAsyncOperation" */ = {
+		E6998C831B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "FABOperation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6998C841B6852BE0018AFFC /* Debug */,
@@ -494,7 +496,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6998C861B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "CLSAsyncOperationTests" */ = {
+		E6998C861B6852BE0018AFFC /* Build configuration list for PBXNativeTarget "FABOperationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6998C871B6852BE0018AFFC /* Debug */,
@@ -503,7 +505,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6A2960B1C10D33800F82D06 /* Build configuration list for PBXNativeTarget "libCLSAsyncOperation" */ = {
+		E6A2960B1C10D33800F82D06 /* Build configuration list for PBXNativeTarget "libFABOperation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6A296091C10D33800F82D06 /* Debug */,

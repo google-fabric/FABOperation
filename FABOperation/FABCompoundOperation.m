@@ -1,20 +1,21 @@
 //
-//  CLSCompoundAsyncOperation.m
-//  MacApp
+//  FABCompoundAsyncOperation.m
+//  FABOperation
 //
-//  Created by Andrew McKnight on 4/23/15.
-//  Copyright (c) 2015 Crashlytics. All rights reserved.
+//  Copyright © 2015 Twitter. All rights reserved.
 //
 
-#import "CLSCompoundAsyncOperation.h"
-#import "CLSAsyncOperation_Private.h"
+#import "FABCompoundOperation.h"
+#import "FABAsyncOperation_Private.h"
 
-#import "CLSQueueAwareOperation.h"
+#import "FABQueueAwareOperation.h"
 
-static NSString *const CLSCompoundAsyncOperationErrorDomain = @"com.crashlytics.error.compound-async-operation";
-NSString *const CLSCompoundAsyncOperationErrorUserInfoKeyUnderlyingErrors = @"com.crashlytics.error.user-info-key.underlying-errors";
+NSString *const FABCompoundOperationErrorUserInfoKeyUnderlyingErrors = @"com.twitter.FABCompoundOperation.error.user-info-key.underlying-errors";
 
-@interface CLSCompoundAsyncOperation ()
+static NSString *const FABCompoundOperationErrorDomain = @"com.twitter.FABCompoundOperation.error";
+static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABCompoundOperation.dispatch-queue.counting-queue";
+
+@interface FABCompoundOperation ()
 
 @property (strong, nonatomic) NSOperationQueue *compoundQueue;
 @property (assign, nonatomic) NSUInteger completedOperations;
@@ -23,7 +24,7 @@ NSString *const CLSCompoundAsyncOperationErrorUserInfoKeyUnderlyingErrors = @"co
 
 @end
 
-@implementation CLSCompoundAsyncOperation
+@implementation FABCompoundOperation
 
 - (instancetype)init {
     self = [super init];
@@ -34,29 +35,29 @@ NSString *const CLSCompoundAsyncOperationErrorUserInfoKeyUnderlyingErrors = @"co
     _compoundQueue = [[NSOperationQueue alloc] init];
     _completedOperations = 0;
     _errors = [NSMutableArray array];
-    _countingQueue = dispatch_queue_create("operation counting queue", DISPATCH_QUEUE_SERIAL);
+    _countingQueue = dispatch_queue_create(FABCompoundOperationCountingQueueLabel, DISPATCH_QUEUE_SERIAL);
     
     return self;
 }
 
 - (void)main {
-    for (CLSAsyncOperation *operation in self.operations) {
-        CLSAsyncOperationCompletionBlock originalCompletion = [operation.asyncCompletion copy];
+    for (FABAsyncOperation *operation in self.operations) {
+        FABAsyncOperationCompletionBlock originalCompletion = [operation.asyncCompletion copy];
 
         [self addCompoundCompletionCheckToOriginalCompletion:originalCompletion operation:operation];
 
-        if ([operation conformsToProtocol:@protocol(CLSQueueAwareOperation)]) {
-            [(id<CLSQueueAwareOperation>)operation setOperationQueue:self.compoundQueue];
+        if ([operation conformsToProtocol:@protocol(FABQueueAwareOperation)]) {
+            [(id<FABQueueAwareOperation>)operation setOperationQueue:self.compoundQueue];
         }
 
         [self.compoundQueue addOperation:operation];
     }
 }
 
-- (void)addCompoundCompletionCheckToOriginalCompletion:(CLSAsyncOperationCompletionBlock)originalCompletion operation:(CLSAsyncOperation *)operation {
-    __weak CLSCompoundAsyncOperation *weakSelf = self;
-    CLSAsyncOperationCompletionBlock completion = ^(NSError *error) {
-        __strong CLSCompoundAsyncOperation *strongSelf = weakSelf;
+- (void)addCompoundCompletionCheckToOriginalCompletion:(FABAsyncOperationCompletionBlock)originalCompletion operation:(FABAsyncOperation *)operation {
+    __weak FABCompoundOperation *weakSelf = self;
+    FABAsyncOperationCompletionBlock completion = ^(NSError *error) {
+        __strong FABCompoundOperation *strongSelf = weakSelf;
 
         NSUInteger completedOperations = [strongSelf updateCompletionCountsWithError:error];
 
@@ -87,7 +88,7 @@ NSString *const CLSCompoundAsyncOperationErrorUserInfoKeyUnderlyingErrors = @"co
         if (self.asyncCompletion) {
             NSError *error = nil;
             if (self.errors.count > 0) {
-                error = [NSError errorWithDomain:CLSCompoundAsyncOperationErrorDomain code:0 userInfo:@{ CLSCompoundAsyncOperationErrorUserInfoKeyUnderlyingErrors: self.errors }];
+                error = [NSError errorWithDomain:FABCompoundOperationErrorDomain code:0 userInfo:@{ FABCompoundOperationErrorUserInfoKeyUnderlyingErrors: self.errors }];
             }
             self.asyncCompletion(error);
         }
