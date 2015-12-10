@@ -1,0 +1,3 @@
+[submodule "vendor/xcconfig"]
+	path = vendor/xcconfig
+	url = git@github.com:twitter-fabric/xcconfig.git

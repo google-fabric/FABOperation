@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E6998C731B6852BE0018AFFC /* FABAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */; };
+		E67E50571C2689CE0048A75E /* FABOperationPreFlightCancellationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E67E50561C2689CE0048A75E /* FABOperationPreFlightCancellationTest.m */; };
+		E67E505A1C268D130048A75E /* FABTestAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E67E50591C268D130048A75E /* FABTestAsyncOperation.m */; };
+		E67E505F1C2878590048A75E /* FABTestExpectations.m in Sources */ = {isa = PBXBuildFile; fileRef = E67E505E1C2878590048A75E /* FABTestExpectations.m */; };
+		E6998C731B6852BE0018AFFC /* FABAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6998C791B6852BE0018AFFC /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
-		E6998C801B6852BE0018AFFC /* FABOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C7F1B6852BE0018AFFC /* FABOperationTests.m */; };
-		E6998C8E1B6852DA0018AFFC /* FABAsyncOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C891B6852DA0018AFFC /* FABAsyncOperation_Private.h */; };
+		E6998C801B6852BE0018AFFC /* FABOperationInFlightCancellationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C7F1B6852BE0018AFFC /* FABOperationInFlightCancellationTest.m */; };
+		E6998C8E1B6852DA0018AFFC /* FABAsyncOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C891B6852DA0018AFFC /* FABAsyncOperation_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6998C8F1B6852DA0018AFFC /* FABAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */; };
-		E6998C901B6852DA0018AFFC /* FABCompoundOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */; };
+		E6998C901B6852DA0018AFFC /* FABCompoundOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6998C911B6852DA0018AFFC /* FABCompoundOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */; };
-		E6998C921B6852DA0018AFFC /* FABQueueAwareOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C8D1B6852DA0018AFFC /* FABQueueAwareOperation.h */; };
 		E6A2960C1C10D35200F82D06 /* FABAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */; };
 		E6A2960D1C10D35400F82D06 /* FABCompoundOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */; };
+		E6B565711C2629E0003D4AC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B565701C2629E0003D4AC4 /* AppDelegate.swift */; };
+		E6B565731C2629E0003D4AC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B565721C2629E0003D4AC4 /* Assets.xcassets */; };
+		E6B565761C2629E0003D4AC4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B565741C2629E0003D4AC4 /* MainMenu.xib */; };
+		E6B5657D1C262E6B003D4AC4 /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
+		E6B5657E1C262E6B003D4AC4 /* FABOperation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E6CD308E1C1A040500EAD3B2 /* FABOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CD308D1C1A040500EAD3B2 /* FABOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -28,22 +35,56 @@
 			remoteGlobalIDString = E6998C6C1B6852BE0018AFFC;
 			remoteInfo = CLSAsyncOperation;
 		};
+		E6B5657F1C262E6B003D4AC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6998C641B6852BE0018AFFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6998C6C1B6852BE0018AFFC;
+			remoteInfo = FABOperation;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E6B565811C262E6B003D4AC4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E6B5657E1C262E6B003D4AC4 /* FABOperation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E67E50561C2689CE0048A75E /* FABOperationPreFlightCancellationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABOperationPreFlightCancellationTest.m; sourceTree = "<group>"; };
+		E67E50581C268D130048A75E /* FABTestAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABTestAsyncOperation.h; sourceTree = "<group>"; };
+		E67E50591C268D130048A75E /* FABTestAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABTestAsyncOperation.m; sourceTree = "<group>"; };
+		E67E505D1C2878590048A75E /* FABTestExpectations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABTestExpectations.h; sourceTree = "<group>"; };
+		E67E505E1C2878590048A75E /* FABTestExpectations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABTestExpectations.m; sourceTree = "<group>"; };
+		E691A13B1C1A2F4C0082FCCA /* FABOperation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FABOperation.xcconfig; sourceTree = "<group>"; };
+		E691A13C1C1A2F550082FCCA /* libFABOperation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = libFABOperation.xcconfig; sourceTree = "<group>"; };
+		E691A1411C1A331B0082FCCA /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		E6998C6D1B6852BE0018AFFC /* FABOperation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FABOperation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6998C711B6852BE0018AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FABAsyncOperation.h; sourceTree = "<group>"; };
 		E6998C781B6852BE0018AFFC /* FABOperation.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FABOperation.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6998C7E1B6852BE0018AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6998C7F1B6852BE0018AFFC /* FABOperationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FABOperationTests.m; sourceTree = "<group>"; };
+		E6998C7F1B6852BE0018AFFC /* FABOperationInFlightCancellationTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FABOperationInFlightCancellationTest.m; sourceTree = "<group>"; };
 		E6998C891B6852DA0018AFFC /* FABAsyncOperation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABAsyncOperation_Private.h; sourceTree = "<group>"; };
 		E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABAsyncOperation.m; sourceTree = "<group>"; };
 		E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABCompoundOperation.h; sourceTree = "<group>"; };
 		E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABCompoundOperation.m; sourceTree = "<group>"; };
-		E6998C8D1B6852DA0018AFFC /* FABQueueAwareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABQueueAwareOperation.h; sourceTree = "<group>"; };
-		E6A296031C10D33800F82D06 /* FABOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = FABOperation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A296031C10D33800F82D06 /* libFABOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFABOperation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B565701C2629E0003D4AC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E6B565721C2629E0003D4AC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6B565751C2629E0003D4AC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E6B565771C2629E0003D4AC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6CD308D1C1A040500EAD3B2 /* FABOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABOperation.h; sourceTree = "<group>"; };
+		E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FABOperationDemo.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +110,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6B5656B1C2629E0003D4AC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B5657D1C262E6B003D4AC4 /* FABOperation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +126,7 @@
 			children = (
 				E6998C6F1B6852BE0018AFFC /* FABOperation */,
 				E6998C7C1B6852BE0018AFFC /* FABOperationTests */,
+				E6B5656F1C2629E0003D4AC4 /* FABOperationDemo */,
 				E6998C6E1B6852BE0018AFFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +136,8 @@
 			children = (
 				E6998C6D1B6852BE0018AFFC /* FABOperation.framework */,
 				E6998C781B6852BE0018AFFC /* FABOperation.xctest */,
-				E6A296031C10D33800F82D06 /* FABOperation.a */,
+				E6A296031C10D33800F82D06 /* libFABOperation.a */,
+				E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,7 +151,6 @@
 				E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */,
 				E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */,
 				E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */,
-				E6998C8D1B6852DA0018AFFC /* FABQueueAwareOperation.h */,
 				E6998C701B6852BE0018AFFC /* Supporting Files */,
 			);
 			path = FABOperation;
@@ -110,6 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				E6998C711B6852BE0018AFFC /* Info.plist */,
+				E691A13B1C1A2F4C0082FCCA /* FABOperation.xcconfig */,
+				E691A13C1C1A2F550082FCCA /* libFABOperation.xcconfig */,
+				E691A1411C1A331B0082FCCA /* Project.xcconfig */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,7 +170,12 @@
 		E6998C7C1B6852BE0018AFFC /* FABOperationTests */ = {
 			isa = PBXGroup;
 			children = (
-				E6998C7F1B6852BE0018AFFC /* FABOperationTests.m */,
+				E6998C7F1B6852BE0018AFFC /* FABOperationInFlightCancellationTest.m */,
+				E67E50561C2689CE0048A75E /* FABOperationPreFlightCancellationTest.m */,
+				E67E50581C268D130048A75E /* FABTestAsyncOperation.h */,
+				E67E50591C268D130048A75E /* FABTestAsyncOperation.m */,
+				E67E505D1C2878590048A75E /* FABTestExpectations.h */,
+				E67E505E1C2878590048A75E /* FABTestExpectations.m */,
 				E6998C7D1B6852BE0018AFFC /* Supporting Files */,
 			);
 			path = FABOperationTests;
@@ -131,6 +189,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E6B5656F1C2629E0003D4AC4 /* FABOperationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E6B565701C2629E0003D4AC4 /* AppDelegate.swift */,
+				E6B565721C2629E0003D4AC4 /* Assets.xcassets */,
+				E6B565741C2629E0003D4AC4 /* MainMenu.xib */,
+				E6B565771C2629E0003D4AC4 /* Info.plist */,
+				E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */,
+			);
+			path = FABOperationDemo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -141,7 +211,6 @@
 				E6CD308E1C1A040500EAD3B2 /* FABOperation.h in Headers */,
 				E6998C8E1B6852DA0018AFFC /* FABAsyncOperation_Private.h in Headers */,
 				E6998C731B6852BE0018AFFC /* FABAsyncOperation.h in Headers */,
-				E6998C921B6852DA0018AFFC /* FABQueueAwareOperation.h in Headers */,
 				E6998C901B6852DA0018AFFC /* FABCompoundOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,8 +275,27 @@
 			);
 			name = libFABOperation;
 			productName = libCLSAsyncOperation;
-			productReference = E6A296031C10D33800F82D06 /* FABOperation.a */;
+			productReference = E6A296031C10D33800F82D06 /* libFABOperation.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		E6B5656D1C2629E0003D4AC4 /* FABOperationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B5657A1C2629E0003D4AC4 /* Build configuration list for PBXNativeTarget "FABOperationDemo" */;
+			buildPhases = (
+				E6B5656A1C2629E0003D4AC4 /* Sources */,
+				E6B5656B1C2629E0003D4AC4 /* Frameworks */,
+				E6B5656C1C2629E0003D4AC4 /* Resources */,
+				E6B565811C262E6B003D4AC4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6B565801C262E6B003D4AC4 /* PBXTargetDependency */,
+			);
+			name = FABOperationDemo;
+			productName = FABOperationDemo;
+			productReference = E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -216,7 +304,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FAB;
-				LastUpgradeCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Twitter;
 				TargetAttributes = {
 					E6998C6C1B6852BE0018AFFC = {
@@ -228,6 +317,9 @@
 					E6A296021C10D33800F82D06 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
+					E6B5656D1C2629E0003D4AC4 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = E6998C671B6852BE0018AFFC /* Build configuration list for PBXProject "FABOperation" */;
@@ -236,6 +328,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E6998C631B6852BE0018AFFC;
 			productRefGroup = E6998C6E1B6852BE0018AFFC /* Products */;
@@ -245,6 +338,7 @@
 				E6998C6C1B6852BE0018AFFC /* FABOperation */,
 				E6998C771B6852BE0018AFFC /* FABOperationTests */,
 				E6A296021C10D33800F82D06 /* libFABOperation */,
+				E6B5656D1C2629E0003D4AC4 /* FABOperationDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -264,6 +358,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6B5656C1C2629E0003D4AC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B565731C2629E0003D4AC4 /* Assets.xcassets in Resources */,
+				E6B565761C2629E0003D4AC4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -280,7 +383,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6998C801B6852BE0018AFFC /* FABOperationTests.m in Sources */,
+				E67E505F1C2878590048A75E /* FABTestExpectations.m in Sources */,
+				E67E50571C2689CE0048A75E /* FABOperationPreFlightCancellationTest.m in Sources */,
+				E6998C801B6852BE0018AFFC /* FABOperationInFlightCancellationTest.m in Sources */,
+				E67E505A1C268D130048A75E /* FABTestAsyncOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +399,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6B5656A1C2629E0003D4AC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B565711C2629E0003D4AC4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,122 +415,50 @@
 			target = E6998C6C1B6852BE0018AFFC /* FABOperation */;
 			targetProxy = E6998C7A1B6852BE0018AFFC /* PBXContainerItemProxy */;
 		};
+		E6B565801C262E6B003D4AC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6998C6C1B6852BE0018AFFC /* FABOperation */;
+			targetProxy = E6B5657F1C262E6B003D4AC4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6B565741C2629E0003D4AC4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6B565751C2629E0003D4AC4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E6998C811B6852BE0018AFFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E691A1411C1A331B0082FCCA /* Project.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 3;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		E6998C821B6852BE0018AFFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E691A1411C1A331B0082FCCA /* Project.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 3;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		E6998C841B6852BE0018AFFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E691A13B1C1A2F4C0082FCCA /* FABOperation.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				INFOPLIST_FILE = FABOperation/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = FABOperation;
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		E6998C851B6852BE0018AFFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E691A13B1C1A2F4C0082FCCA /* FABOperation.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				INFOPLIST_FILE = FABOperation/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = FABOperation;
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -456,22 +498,29 @@
 		};
 		E6A296091C10D33800F82D06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E691A13C1C1A2F550082FCCA /* libFABOperation.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				ENABLE_TESTABILITY = YES;
-				EXECUTABLE_PREFIX = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_NAME = FABOperation;
 			};
 			name = Debug;
 		};
 		E6A2960A1C10D33800F82D06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E691A13C1C1A2F550082FCCA /* libFABOperation.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				EXECUTABLE_PREFIX = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_NAME = FABOperation;
+			};
+			name = Release;
+		};
+		E6B565781C2629E0003D4AC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E6B565791C2629E0003D4AC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */;
+			buildSettings = {
 			};
 			name = Release;
 		};
@@ -510,6 +559,15 @@
 			buildConfigurations = (
 				E6A296091C10D33800F82D06 /* Debug */,
 				E6A2960A1C10D33800F82D06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B5657A1C2629E0003D4AC4 /* Build configuration list for PBXNativeTarget "FABOperationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6B565781C2629E0003D4AC4 /* Debug */,
+				E6B565791C2629E0003D4AC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
