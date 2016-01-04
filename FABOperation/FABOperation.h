@@ -16,5 +16,4 @@ FOUNDATION_EXPORT const unsigned char FABOperationVersionString[];
 #import "FABAsyncOperation.h"
 #import "FABCompoundOperation.h"
 #import "FABQueueAwareOperation.h"
-
-
+#import "FABAsyncOperation_Private.h"
