@@ -5,7 +5,7 @@
 //  Copyright © 2015 Twitter. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for FABOperation.
 FOUNDATION_EXPORT double FABOperationVersionNumber;
