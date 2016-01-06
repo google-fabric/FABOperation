@@ -8,7 +8,8 @@
 #import "FABCompoundOperation.h"
 #import "FABAsyncOperation_Private.h"
 
-#import "FABQueueAwareOperation.h"
+const NSUInteger FABCompoundOperationErrorCodeCancelled = UINT_MAX - 1;
+const NSUInteger FABCompoundOperationErrorCodeSuboperationFailed = UINT_MAX - 2;
 
 NSString *const FABCompoundOperationErrorUserInfoKeyUnderlyingErrors = @"com.twitter.FABCompoundOperation.error.user-info-key.underlying-errors";
 
@@ -17,10 +18,14 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 
 @interface FABCompoundOperation ()
 
-@property (strong, nonatomic) NSOperationQueue *compoundQueue;
+@property (strong, nonatomic, readwrite) NSOperationQueue *compoundQueue;
 @property (assign, nonatomic) NSUInteger completedOperations;
 @property (strong, nonatomic) NSMutableArray *errors;
+#if TARGET_OS_IPHONE
 @property (strong, nonatomic) dispatch_queue_t countingQueue;
+#else
+@property (assign, nonatomic) dispatch_queue_t countingQueue;
+#endif
 
 @end
 
@@ -40,18 +45,37 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
     return self;
 }
 
+#if !TARGET_OS_IPHONE
+- (void)dealloc {
+    if (_countingQueue) {
+        dispatch_release(_countingQueue);
+    }
+}
+#endif
+
 - (void)main {
     for (FABAsyncOperation *operation in self.operations) {
         FABAsyncOperationCompletionBlock originalCompletion = [operation.asyncCompletion copy];
 
         [self addCompoundCompletionCheckToOriginalCompletion:originalCompletion operation:operation];
 
-        if ([operation conformsToProtocol:@protocol(FABQueueAwareOperation)]) {
-            [(id<FABQueueAwareOperation>)operation setOperationQueue:self.compoundQueue];
-        }
-
         [self.compoundQueue addOperation:operation];
     }
+}
+
+- (void)cancel {
+    if (self.compoundQueue.operations.count > 0) {
+        [self.compoundQueue cancelAllOperations];
+        [self attemptCompoundCompletionWithCompletedOperations:0];
+    } else {
+        for (NSOperation *operation in self.operations) {
+            [operation cancel];
+        }
+
+        // we have to add the operations to the queue in order for their isFinished property to be set to true... gross.
+        [self.compoundQueue addOperations:self.operations waitUntilFinished:NO];
+    }
+    [super cancel];
 }
 
 - (void)addCompoundCompletionCheckToOriginalCompletion:(FABAsyncOperationCompletionBlock)originalCompletion operation:(FABAsyncOperation *)operation {
@@ -84,15 +108,21 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 }
 
 - (void)attemptCompoundCompletionWithCompletedOperations:(NSUInteger)completedOperations {
-    if (completedOperations + self.errors.count == self.operations.count) {
+    if (self.isCancelled) {
+        [self markDone];
+        if (self.asyncCompletion) {
+            self.asyncCompletion([NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeCancelled userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"%@ cancelled", self.name]}]);
+            self.asyncCompletion = nil;
+        }
+    } else if (completedOperations + self.errors.count == self.operations.count) {
+        [self markDone];
         if (self.asyncCompletion) {
             NSError *error = nil;
             if (self.errors.count > 0) {
-                error = [NSError errorWithDomain:FABCompoundOperationErrorDomain code:0 userInfo:@{ FABCompoundOperationErrorUserInfoKeyUnderlyingErrors: self.errors }];
+                error = [NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeSuboperationFailed userInfo:@{ FABCompoundOperationErrorUserInfoKeyUnderlyingErrors: self.errors }];
             }
             self.asyncCompletion(error);
         }
-        [self markDone];
     }
 }
 

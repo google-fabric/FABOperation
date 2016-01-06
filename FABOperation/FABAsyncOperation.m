@@ -6,6 +6,7 @@
 //
 
 #import "FABAsyncOperation.h"
+#import "FABAsyncOperation_Private.h"
 
 @interface FABAsyncOperation () {
     BOOL _internalExecuting;

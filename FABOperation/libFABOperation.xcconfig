@@ -1,0 +1,9 @@
+//
+//  libFABOperation.xcconfig
+//  FABOperation
+//
+//  Copyright © 2015 Twitter. All rights reserved.
+//
+
+#include "../vendor/xcconfig/Targets/Target.xcconfig"
+#include "../vendor/xcconfig/Targets/StaticLibrary.xcconfig"

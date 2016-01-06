@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A296021C10D33800F82D06"
-               BuildableName = "libFABOperation.a"
-               BlueprintName = "libFABOperation"
+               BlueprintIdentifier = "E6EC41BA1C3C520D0099366E"
+               BuildableName = "SmokeTest-OSX.app"
+               BlueprintName = "SmokeTest-OSX"
                ReferencedContainer = "container:FABOperation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E6EC41BA1C3C520D0099366E"
+            BuildableName = "SmokeTest-OSX.app"
+            BlueprintName = "SmokeTest-OSX"
+            ReferencedContainer = "container:FABOperation.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E6A296021C10D33800F82D06"
-            BuildableName = "libFABOperation.a"
-            BlueprintName = "libFABOperation"
+            BlueprintIdentifier = "E6EC41BA1C3C520D0099366E"
+            BuildableName = "SmokeTest-OSX.app"
+            BlueprintName = "SmokeTest-OSX"
             ReferencedContainer = "container:FABOperation.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E6A296021C10D33800F82D06"
-            BuildableName = "libFABOperation.a"
-            BlueprintName = "libFABOperation"
+            BlueprintIdentifier = "E6EC41BA1C3C520D0099366E"
+            BuildableName = "SmokeTest-OSX.app"
+            BlueprintName = "SmokeTest-OSX"
             ReferencedContainer = "container:FABOperation.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
