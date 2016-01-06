@@ -1,0 +1,27 @@
+{
+    "authors": "Twitter",
+    "frameworks": [
+        "Security",
+        "SystemConfiguration"
+    ],
+    "homepage": "https://github.com/twitter-fabric/FABOperation",
+    "license": {
+        "text": "Copyright 2016 Twitter, Inc. All Rights Reserved.",
+        "type": "MIT"
+    },
+    "name": "FABOperation", 
+    "platforms": {
+        "ios": "6.0",
+        "osx": "10.7",
+        "tvos": "9.0",
+        "watchos": "2.0"
+    },
+    "requires_arc": "true",
+    "source": {
+        "git": "git@github.com:twitter-fabric/FABOperation.git",
+        "submodules": "true",
+        "tag": "$FABOPERATION_VERSION"
+    },
+    "summary": "A handy utility for building asynchronous and compound NSOperations.",
+    "version": "$FABOPERATION_VERSION"
+}
