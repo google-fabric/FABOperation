@@ -5,15 +5,10 @@
 //  Copyright © 2015 Twitter. All rights reserved.
 //
 
-#include "../vendor/xcconfig/Architectures.xcconfig"
 #include "../vendor/xcconfig/Bitcode.xcconfig"
-#include "../vendor/xcconfig/CodeSigning.xcconfig"
-#include "../vendor/xcconfig/CompilerFeatures.xcconfig"
-#include "../vendor/xcconfig/CompilerWarnings.xcconfig"
-#include "../vendor/xcconfig/PreprocessorDefinitions.xcconfig"
 
 DYLIB_COMPATIBILITY_VERSION = 1
-DYLIB_CURRENT_VERSION = 3
+DYLIB_CURRENT_VERSION = 4
 
 PRODUCT_NAME = FABOperation
 
