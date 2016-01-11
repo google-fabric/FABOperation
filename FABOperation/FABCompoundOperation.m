@@ -8,6 +8,8 @@
 #import "FABCompoundOperation.h"
 #import "FABAsyncOperation_Private.h"
 
+#define FAB_DISPATCH_QUEUES_AS_OBJECTS OS_OBJECT_USE_OBJC_RETAIN_RELEASE
+
 const NSUInteger FABCompoundOperationErrorCodeCancelled = UINT_MAX - 1;
 const NSUInteger FABCompoundOperationErrorCodeSuboperationFailed = UINT_MAX - 2;
 
@@ -21,7 +23,7 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 @property (strong, nonatomic, readwrite) NSOperationQueue *compoundQueue;
 @property (assign, nonatomic) NSUInteger completedOperations;
 @property (strong, nonatomic) NSMutableArray *errors;
-#if TARGET_OS_IPHONE
+#if FAB_DISPATCH_QUEUES_AS_OBJECTS
 @property (strong, nonatomic) dispatch_queue_t countingQueue;
 #else
 @property (assign, nonatomic) dispatch_queue_t countingQueue;
@@ -45,7 +47,7 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
     return self;
 }
 
-#if !TARGET_OS_IPHONE
+#if !FAB_DISPATCH_QUEUES_AS_OBJECTS
 - (void)dealloc {
     if (_countingQueue) {
         dispatch_release(_countingQueue);
