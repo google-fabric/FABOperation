@@ -5,7 +5,6 @@
 //  Copyright © 2015 Twitter. All rights reserved.
 //
 
-#include "../vendor/xcconfig/Targets/Target.xcconfig"
 #include "../vendor/xcconfig/Targets/Framework.xcconfig"
 
 GCC_PRECOMPILE_PREFIX_HEADER = NO

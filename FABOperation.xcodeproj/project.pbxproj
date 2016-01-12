@@ -135,6 +135,7 @@
 		E6CA09521C3D85230025ED73 /* SmokeTest-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SmokeTest-tvOS.xcconfig"; sourceTree = "<group>"; };
 		E6CA09531C3D87BA0025ED73 /* SmokeTest-OSX.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SmokeTest-OSX.xcconfig"; sourceTree = "<group>"; };
 		E6CD308D1C1A040500EAD3B2 /* FABOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABOperation.h; sourceTree = "<group>"; };
+		E6D289F81C45872E007F8F67 /* xcconfig */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xcconfig; path = vendor/xcconfig; sourceTree = SOURCE_ROOT; };
 		E6E0E9E11C3D71C400DF3D23 /* SmokeTest-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SmokeTest-iOS.xcconfig"; sourceTree = "<group>"; };
 		E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FABOperationDemo.xcconfig; sourceTree = "<group>"; };
 		E6EC41561C3C51D70099366E /* SmokeTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmokeTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +252,7 @@
 		E6998C6F1B6852BE0018AFFC /* FABOperation */ = {
 			isa = PBXGroup;
 			children = (
+				E6D289F91C458742007F8F67 /* Config */,
 				E6CD308D1C1A040500EAD3B2 /* FABOperation.h */,
 				E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */,
 				E6998C891B6852DA0018AFFC /* FABAsyncOperation_Private.h */,
@@ -266,9 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				E6998C711B6852BE0018AFFC /* Info.plist */,
-				E691A13B1C1A2F4C0082FCCA /* FABOperation.xcconfig */,
-				E691A13C1C1A2F550082FCCA /* libFABOperation.xcconfig */,
-				E691A1411C1A331B0082FCCA /* Project.xcconfig */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,6 +304,17 @@
 				E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */,
 			);
 			path = FABOperationDemo;
+			sourceTree = "<group>";
+		};
+		E6D289F91C458742007F8F67 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E691A13B1C1A2F4C0082FCCA /* FABOperation.xcconfig */,
+				E691A13C1C1A2F550082FCCA /* libFABOperation.xcconfig */,
+				E691A1411C1A331B0082FCCA /* Project.xcconfig */,
+				E6D289F81C45872E007F8F67 /* xcconfig */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		E6EC411C1C3C4F610099366E /* SmokeTest */ = {
