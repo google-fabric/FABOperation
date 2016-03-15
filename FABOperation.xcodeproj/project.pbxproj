@@ -10,6 +10,11 @@
 		E67E50571C2689CE0048A75E /* FABOperationPreFlightCancellationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E67E50561C2689CE0048A75E /* FABOperationPreFlightCancellationTest.m */; };
 		E67E505A1C268D130048A75E /* FABTestAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E67E50591C268D130048A75E /* FABTestAsyncOperation.m */; };
 		E67E505F1C2878590048A75E /* FABTestExpectations.m in Sources */ = {isa = PBXBuildFile; fileRef = E67E505E1C2878590048A75E /* FABTestExpectations.m */; };
+		E6837FCA1C956465001C0D01 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6837FC91C956465001C0D01 /* CoreImage.framework */; };
+		E6837FEE1C982A52001C0D01 /* OperationStateChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6837FED1C982A52001C0D01 /* OperationStateChangeDelegate.swift */; };
+		E683800C1C984DF3001C0D01 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683800B1C984DF3001C0D01 /* SyncOperation.swift */; };
+		E683800E1C984DF9001C0D01 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683800D1C984DF9001C0D01 /* AsyncOperation.swift */; };
+		E68380101C984DFF001C0D01 /* CompoundOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683800F1C984DFF001C0D01 /* CompoundOperation.swift */; };
 		E6998C731B6852BE0018AFFC /* FABAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6998C721B6852BE0018AFFC /* FABAsyncOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6998C791B6852BE0018AFFC /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
 		E6998C801B6852BE0018AFFC /* FABOperationInFlightCancellationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E6998C7F1B6852BE0018AFFC /* FABOperationInFlightCancellationTest.m */; };
@@ -26,21 +31,6 @@
 		E6B5657E1C262E6B003D4AC4 /* FABOperation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E6CD308E1C1A040500EAD3B2 /* FABOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CD308D1C1A040500EAD3B2 /* FABOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6E0E9C91C3C757B00DF3D23 /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
-		E6EC415A1C3C51D70099366E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC41591C3C51D70099366E /* main.m */; };
-		E6EC415D1C3C51D70099366E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC415C1C3C51D70099366E /* AppDelegate.m */; };
-		E6EC41601C3C51D70099366E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC415F1C3C51D70099366E /* ViewController.m */; };
-		E6EC41631C3C51D70099366E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EC41611C3C51D70099366E /* Main.storyboard */; };
-		E6EC41651C3C51D70099366E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6EC41641C3C51D70099366E /* Assets.xcassets */; };
-		E6EC41681C3C51D70099366E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EC41661C3C51D70099366E /* LaunchScreen.storyboard */; };
-		E6EC41A71C3C51FF0099366E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC41A61C3C51FF0099366E /* main.m */; };
-		E6EC41AA1C3C51FF0099366E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC41A91C3C51FF0099366E /* AppDelegate.m */; };
-		E6EC41AD1C3C51FF0099366E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC41AC1C3C51FF0099366E /* ViewController.m */; };
-		E6EC41B01C3C51FF0099366E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EC41AE1C3C51FF0099366E /* Main.storyboard */; };
-		E6EC41B21C3C51FF0099366E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6EC41B11C3C51FF0099366E /* Assets.xcassets */; };
-		E6EC41BF1C3C520D0099366E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC41BE1C3C520D0099366E /* AppDelegate.m */; };
-		E6EC41C21C3C520D0099366E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EC41C11C3C520D0099366E /* main.m */; };
-		E6EC41C41C3C520D0099366E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6EC41C31C3C520D0099366E /* Assets.xcassets */; };
-		E6EC41C71C3C520D0099366E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6EC41C51C3C520D0099366E /* MainMenu.xib */; };
 		E6EC41D21C3C52710099366E /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
 		E6EC41D71C3C52790099366E /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
 /* End PBXBuildFile section */
@@ -113,6 +103,11 @@
 		E67E50591C268D130048A75E /* FABTestAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABTestAsyncOperation.m; sourceTree = "<group>"; };
 		E67E505D1C2878590048A75E /* FABTestExpectations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABTestExpectations.h; sourceTree = "<group>"; };
 		E67E505E1C2878590048A75E /* FABTestExpectations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABTestExpectations.m; sourceTree = "<group>"; };
+		E6837FC91C956465001C0D01 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E6837FED1C982A52001C0D01 /* OperationStateChangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationStateChangeDelegate.swift; sourceTree = "<group>"; };
+		E683800B1C984DF3001C0D01 /* SyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
+		E683800D1C984DF9001C0D01 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		E683800F1C984DFF001C0D01 /* CompoundOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundOperation.swift; sourceTree = "<group>"; };
 		E691A13B1C1A2F4C0082FCCA /* FABOperation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FABOperation.xcconfig; sourceTree = "<group>"; };
 		E691A13C1C1A2F550082FCCA /* libFABOperation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = libFABOperation.xcconfig; sourceTree = "<group>"; };
 		E691A1411C1A331B0082FCCA /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
@@ -132,38 +127,12 @@
 		E6B565721C2629E0003D4AC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6B565751C2629E0003D4AC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E6B565771C2629E0003D4AC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6CA09521C3D85230025ED73 /* SmokeTest-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SmokeTest-tvOS.xcconfig"; sourceTree = "<group>"; };
-		E6CA09531C3D87BA0025ED73 /* SmokeTest-OSX.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SmokeTest-OSX.xcconfig"; sourceTree = "<group>"; };
 		E6CD308D1C1A040500EAD3B2 /* FABOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABOperation.h; sourceTree = "<group>"; };
 		E6D289F81C45872E007F8F67 /* xcconfig */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xcconfig; path = vendor/xcconfig; sourceTree = SOURCE_ROOT; };
-		E6E0E9E11C3D71C400DF3D23 /* SmokeTest-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SmokeTest-iOS.xcconfig"; sourceTree = "<group>"; };
 		E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FABOperationDemo.xcconfig; sourceTree = "<group>"; };
 		E6EC41561C3C51D70099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6EC41591C3C51D70099366E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E6EC415B1C3C51D70099366E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E6EC415C1C3C51D70099366E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E6EC415E1C3C51D70099366E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E6EC415F1C3C51D70099366E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E6EC41621C3C51D70099366E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E6EC41641C3C51D70099366E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E6EC41671C3C51D70099366E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E6EC41691C3C51D70099366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6EC41A31C3C51FF0099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6EC41A61C3C51FF0099366E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E6EC41A81C3C51FF0099366E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E6EC41A91C3C51FF0099366E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E6EC41AB1C3C51FF0099366E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E6EC41AC1C3C51FF0099366E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E6EC41AF1C3C51FF0099366E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E6EC41B11C3C51FF0099366E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E6EC41B31C3C51FF0099366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6EC41BB1C3C520D0099366E /* SmokeTest-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmokeTest-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6EC41BD1C3C520D0099366E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E6EC41BE1C3C520D0099366E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E6EC41C11C3C520D0099366E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E6EC41C31C3C520D0099366E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E6EC41C61C3C520D0099366E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E6EC41C81C3C520D0099366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6EC41BB1C3C520D0099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6837FCA1C956465001C0D01 /* CoreImage.framework in Frameworks */,
 				E6B5657D1C262E6B003D4AC4 /* FABOperation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,10 +197,10 @@
 		E6998C631B6852BE0018AFFC = {
 			isa = PBXGroup;
 			children = (
+				E6837FC91C956465001C0D01 /* CoreImage.framework */,
 				E6998C6F1B6852BE0018AFFC /* FABOperation */,
 				E6998C7C1B6852BE0018AFFC /* FABOperationTests */,
 				E6B5656F1C2629E0003D4AC4 /* FABOperationDemo */,
-				E6EC411C1C3C4F610099366E /* SmokeTest */,
 				E6998C6E1B6852BE0018AFFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -244,7 +214,7 @@
 				E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */,
 				E6EC41561C3C51D70099366E /* FABOperation.app */,
 				E6EC41A31C3C51FF0099366E /* FABOperation.app */,
-				E6EC41BB1C3C520D0099366E /* SmokeTest-OSX.app */,
+				E6EC41BB1C3C520D0099366E /* FABOperation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,6 +268,10 @@
 			isa = PBXGroup;
 			children = (
 				E6B565701C2629E0003D4AC4 /* AppDelegate.swift */,
+				E683800B1C984DF3001C0D01 /* SyncOperation.swift */,
+				E683800D1C984DF9001C0D01 /* AsyncOperation.swift */,
+				E683800F1C984DFF001C0D01 /* CompoundOperation.swift */,
+				E6837FED1C982A52001C0D01 /* OperationStateChangeDelegate.swift */,
 				E6B565721C2629E0003D4AC4 /* Assets.xcassets */,
 				E6B565741C2629E0003D4AC4 /* MainMenu.xib */,
 				E6B565771C2629E0003D4AC4 /* Info.plist */,
@@ -315,90 +289,6 @@
 				E6D289F81C45872E007F8F67 /* xcconfig */,
 			);
 			name = Config;
-			sourceTree = "<group>";
-		};
-		E6EC411C1C3C4F610099366E /* SmokeTest */ = {
-			isa = PBXGroup;
-			children = (
-				E6EC41571C3C51D70099366E /* SmokeTest-iOS */,
-				E6EC41A41C3C51FF0099366E /* SmokeTest-tvOS */,
-				E6EC41BC1C3C520D0099366E /* SmokeTest-OSX */,
-			);
-			name = SmokeTest;
-			sourceTree = "<group>";
-		};
-		E6EC41571C3C51D70099366E /* SmokeTest-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E6EC415B1C3C51D70099366E /* AppDelegate.h */,
-				E6EC415C1C3C51D70099366E /* AppDelegate.m */,
-				E6EC41641C3C51D70099366E /* Assets.xcassets */,
-				E6EC41691C3C51D70099366E /* Info.plist */,
-				E6EC41661C3C51D70099366E /* LaunchScreen.storyboard */,
-				E6EC41611C3C51D70099366E /* Main.storyboard */,
-				E6E0E9E11C3D71C400DF3D23 /* SmokeTest-iOS.xcconfig */,
-				E6EC41581C3C51D70099366E /* Supporting Files */,
-				E6EC415E1C3C51D70099366E /* ViewController.h */,
-				E6EC415F1C3C51D70099366E /* ViewController.m */,
-			);
-			name = "SmokeTest-iOS";
-			path = "SmokeTest/SmokeTest-iOS";
-			sourceTree = "<group>";
-		};
-		E6EC41581C3C51D70099366E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E6EC41591C3C51D70099366E /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E6EC41A41C3C51FF0099366E /* SmokeTest-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				E6EC41A81C3C51FF0099366E /* AppDelegate.h */,
-				E6EC41A91C3C51FF0099366E /* AppDelegate.m */,
-				E6EC41B11C3C51FF0099366E /* Assets.xcassets */,
-				E6EC41B31C3C51FF0099366E /* Info.plist */,
-				E6EC41AE1C3C51FF0099366E /* Main.storyboard */,
-				E6CA09521C3D85230025ED73 /* SmokeTest-tvOS.xcconfig */,
-				E6EC41A51C3C51FF0099366E /* Supporting Files */,
-				E6EC41AB1C3C51FF0099366E /* ViewController.h */,
-				E6EC41AC1C3C51FF0099366E /* ViewController.m */,
-			);
-			name = "SmokeTest-tvOS";
-			path = "SmokeTest/SmokeTest-tvOS";
-			sourceTree = "<group>";
-		};
-		E6EC41A51C3C51FF0099366E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E6EC41A61C3C51FF0099366E /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E6EC41BC1C3C520D0099366E /* SmokeTest-OSX */ = {
-			isa = PBXGroup;
-			children = (
-				E6EC41BD1C3C520D0099366E /* AppDelegate.h */,
-				E6EC41BE1C3C520D0099366E /* AppDelegate.m */,
-				E6EC41C31C3C520D0099366E /* Assets.xcassets */,
-				E6EC41C81C3C520D0099366E /* Info.plist */,
-				E6EC41C51C3C520D0099366E /* MainMenu.xib */,
-				E6CA09531C3D87BA0025ED73 /* SmokeTest-OSX.xcconfig */,
-				E6EC41C01C3C520D0099366E /* Supporting Files */,
-			);
-			name = "SmokeTest-OSX";
-			path = "SmokeTest/SmokeTest-OSX";
-			sourceTree = "<group>";
-		};
-		E6EC41C01C3C520D0099366E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E6EC41C11C3C520D0099366E /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,7 +439,7 @@
 			);
 			name = "SmokeTest-OSX";
 			productName = "SmokeTest-OSX";
-			productReference = E6EC41BB1C3C520D0099366E /* SmokeTest-OSX.app */;
+			productReference = E6EC41BB1C3C520D0099366E /* FABOperation.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -638,9 +528,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EC41681C3C51D70099366E /* LaunchScreen.storyboard in Resources */,
-				E6EC41651C3C51D70099366E /* Assets.xcassets in Resources */,
-				E6EC41631C3C51D70099366E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,8 +535,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EC41B21C3C51FF0099366E /* Assets.xcassets in Resources */,
-				E6EC41B01C3C51FF0099366E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,8 +542,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EC41C41C3C520D0099366E /* Assets.xcassets in Resources */,
-				E6EC41C71C3C520D0099366E /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,7 +581,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E683800C1C984DF3001C0D01 /* SyncOperation.swift in Sources */,
+				E68380101C984DFF001C0D01 /* CompoundOperation.swift in Sources */,
 				E6B565711C2629E0003D4AC4 /* AppDelegate.swift in Sources */,
+				E683800E1C984DF9001C0D01 /* AsyncOperation.swift in Sources */,
+				E6837FEE1C982A52001C0D01 /* OperationStateChangeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,9 +593,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EC41601C3C51D70099366E /* ViewController.m in Sources */,
-				E6EC415D1C3C51D70099366E /* AppDelegate.m in Sources */,
-				E6EC415A1C3C51D70099366E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,9 +600,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EC41AD1C3C51FF0099366E /* ViewController.m in Sources */,
-				E6EC41AA1C3C51FF0099366E /* AppDelegate.m in Sources */,
-				E6EC41A71C3C51FF0099366E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,8 +607,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6EC41C21C3C520D0099366E /* main.m in Sources */,
-				E6EC41BF1C3C520D0099366E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,38 +645,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E6B565751C2629E0003D4AC4 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		E6EC41611C3C51D70099366E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6EC41621C3C51D70099366E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E6EC41661C3C51D70099366E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6EC41671C3C51D70099366E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E6EC41AE1C3C51FF0099366E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6EC41AF1C3C51FF0099366E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E6EC41C51C3C520D0099366E /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6EC41C61C3C520D0099366E /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -897,42 +744,36 @@
 		};
 		E6EC416B1C3C51D70099366E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6E0E9E11C3D71C400DF3D23 /* SmokeTest-iOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		E6EC416C1C3C51D70099366E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6E0E9E11C3D71C400DF3D23 /* SmokeTest-iOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		E6EC41B51C3C51FF0099366E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CA09521C3D85230025ED73 /* SmokeTest-tvOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		E6EC41B61C3C51FF0099366E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CA09521C3D85230025ED73 /* SmokeTest-tvOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		E6EC41CA1C3C520D0099366E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CA09531C3D87BA0025ED73 /* SmokeTest-OSX.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		E6EC41CB1C3C520D0099366E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CA09531C3D87BA0025ED73 /* SmokeTest-OSX.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
