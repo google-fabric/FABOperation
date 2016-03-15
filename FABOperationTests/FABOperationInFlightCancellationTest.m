@@ -2,7 +2,7 @@
 //  FABInFlightCancellationTests.m
 //  FABOperationTests
 //
-//  Copyright © 2015 Twitter. All rights reserved.
+//  Copyright © 2016 Twitter. All rights reserved.
 //
 //  This test class checks behavior of an async operation that is cancelled after
 //  its execution has begun. It makes use of KVO expectations to ensure it goes
