@@ -29,7 +29,7 @@
     _internalFinished = NO;
 
     self.lock = [[NSRecursiveLock alloc] init];
-    self.lock.name = @"com.crashlytics.async-operation-lock";
+    self.lock.name = [NSString stringWithFormat:@"com.twitter.%@-lock", [self class]];
 
     return self;
 }

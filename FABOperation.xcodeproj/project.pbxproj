@@ -138,7 +138,7 @@
 		E6D289F81C45872E007F8F67 /* xcconfig */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xcconfig; path = vendor/xcconfig; sourceTree = SOURCE_ROOT; };
 		E6E0E9E11C3D71C400DF3D23 /* SmokeTest-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SmokeTest-iOS.xcconfig"; sourceTree = "<group>"; };
 		E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FABOperationDemo.xcconfig; sourceTree = "<group>"; };
-		E6EC41561C3C51D70099366E /* SmokeTest-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmokeTest-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6EC41561C3C51D70099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EC41591C3C51D70099366E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6EC415B1C3C51D70099366E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6EC415C1C3C51D70099366E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		E6EC41641C3C51D70099366E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6EC41671C3C51D70099366E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6EC41691C3C51D70099366E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6EC41A31C3C51FF0099366E /* SmokeTest-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmokeTest-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6EC41A31C3C51FF0099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EC41A61C3C51FF0099366E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6EC41A81C3C51FF0099366E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6EC41A91C3C51FF0099366E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -242,8 +242,8 @@
 				E6998C781B6852BE0018AFFC /* FABOperation.xctest */,
 				E6A296031C10D33800F82D06 /* libFABOperation.a */,
 				E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */,
-				E6EC41561C3C51D70099366E /* SmokeTest-iOS.app */,
-				E6EC41A31C3C51FF0099366E /* SmokeTest-tvOS.app */,
+				E6EC41561C3C51D70099366E /* FABOperation.app */,
+				E6EC41A31C3C51FF0099366E /* FABOperation.app */,
 				E6EC41BB1C3C520D0099366E /* SmokeTest-OSX.app */,
 			);
 			name = Products;
@@ -513,7 +513,7 @@
 			);
 			name = "SmokeTest-iOS";
 			productName = "SmokeTest-iOS";
-			productReference = E6EC41561C3C51D70099366E /* SmokeTest-iOS.app */;
+			productReference = E6EC41561C3C51D70099366E /* FABOperation.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E6EC41A21C3C51FF0099366E /* SmokeTest-tvOS */ = {
@@ -531,7 +531,7 @@
 			);
 			name = "SmokeTest-tvOS";
 			productName = "SmokeTest-tvOS";
-			productReference = E6EC41A31C3C51FF0099366E /* SmokeTest-tvOS.app */;
+			productReference = E6EC41A31C3C51FF0099366E /* FABOperation.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E6EC41BA1C3C520D0099366E /* SmokeTest-OSX */ = {
