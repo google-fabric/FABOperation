@@ -2,7 +2,7 @@
 //  FABOperationPreFlightCancellationTest.m
 //  FABOperationTests
 //
-//  Copyright © 2015 Twitter. All rights reserved.
+//  Copyright © 2016 Twitter. All rights reserved.
 //
 //  This test class checks the behavior of an operation that is cancelled before
 //  it begins execution. It observes the operation's isExecuting property and fails
