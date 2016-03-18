@@ -9,7 +9,7 @@ import Cocoa
 
 typealias OperationState = (description: String, color: NSColor, font: String)
 
-let colors = [ NSColor.blackColor(), NSColor.blueColor(), NSColor.orangeColor(), NSColor.redColor(), NSColor.greenColor(), NSColor.grayColor(), NSColor.cyanColor(), NSColor.magentaColor(), NSColor.yellowColor() ]
+let colors = [ NSColor.blackColor(), NSColor.blueColor(), NSColor.orangeColor(), NSColor.redColor(), NSColor.greenColor(), NSColor.grayColor(), NSColor.cyanColor(), NSColor.magentaColor() ]
 
 let urls = [ "https://upload.wikimedia.org/wikipedia/commons/c/c5/Number-One.JPG", "https://upload.wikimedia.org/wikipedia/commons/1/18/Roman_Numeral_2.gif", "https://upload.wikimedia.org/wikipedia/commons/0/0a/Number-three.JPG" ]
 var nextURLIndex = 0
@@ -89,7 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func addAsyncOperation(sender: NSButton) {
         dispatch_async(dispatch_get_main_queue(), {
             let name = "async operation \(self.asyncOperationNumber)"
-            let color = colors[Int(rand()) % colors.count]
+            let color = colors[Int(self.currentColor++ % colors.count)]
             let asyncOperation = AsyncOperation(url: urls[nextURLIndex % 3], imageView: self.imageView, color: color, delegate: self, name: name)
             nextURLIndex += 1
 

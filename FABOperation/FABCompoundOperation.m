@@ -17,6 +17,7 @@ NSString *const FABCompoundOperationErrorUserInfoKeyUnderlyingErrors = @"com.twi
 
 static NSString *const FABCompoundOperationErrorDomain = @"com.twitter.FABCompoundOperation.error";
 static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABCompoundOperation.dispatch-queue.counting-queue";
+static char *const FABCompoundOperationCompletionQueueLabel = "com.twitter.FABCompoundOperation.dispatch-queue.completion-check-queue";
 
 @interface FABCompoundOperation ()
 
@@ -25,8 +26,10 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 @property (strong, nonatomic) NSMutableArray *errors;
 #if FAB_DISPATCH_QUEUES_AS_OBJECTS
 @property (strong, nonatomic) dispatch_queue_t countingQueue;
+@property (strong, nonatomic) dispatch_queue_t completionQueue;
 #else
 @property (assign, nonatomic) dispatch_queue_t countingQueue;
+@property (assign, nonatomic) dispatch_queue_t completionQueue;
 #endif
 
 @end
@@ -43,6 +46,7 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
     _completedOperations = 0;
     _errors = [NSMutableArray array];
     _countingQueue = dispatch_queue_create(FABCompoundOperationCountingQueueLabel, DISPATCH_QUEUE_SERIAL);
+    _completionQueue = dispatch_queue_create(FABCompoundOperationCompletionQueueLabel, DISPATCH_QUEUE_SERIAL);
     
     return self;
 }
@@ -51,6 +55,9 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 - (void)dealloc {
     if (_countingQueue) {
         dispatch_release(_countingQueue);
+    }
+    if (_completionQueue) {
+        dispatch_release(_completionQueue);
     }
 }
 #endif
@@ -67,7 +74,9 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 - (void)cancel {
     if (self.compoundQueue.operations.count > 0) {
         [self.compoundQueue cancelAllOperations];
-        [self attemptCompoundCompletion];
+        dispatch_sync(self.completionQueue, ^{
+            [self attemptCompoundCompletion];
+        });
     } else {
         for (NSOperation *operation in self.operations) {
             [operation cancel];
@@ -104,7 +113,9 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
             originalSyncCompletion();
         }
 
-        [strongSelf attemptCompoundCompletion];
+        dispatch_sync(strongSelf.completionQueue, ^{
+            [strongSelf attemptCompoundCompletion];
+        });
     };
     operation.completionBlock = completion;
 }
@@ -121,20 +132,14 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 
 - (void)attemptCompoundCompletion {
     if (self.isCancelled) {
-        [self markDone];
-        if (self.asyncCompletion) {
-            self.asyncCompletion([NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeCancelled userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"%@ cancelled", self.name]}]);
-            self.asyncCompletion = nil;
-        }
+        [self finish:[NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeCancelled userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"%@ cancelled", self.name]}]];
+        self.asyncCompletion = nil;
     } else if (self.completedOperations + self.errors.count == self.operations.count) {
-        [self markDone];
-        if (self.asyncCompletion) {
-            NSError *error = nil;
-            if (self.errors.count > 0) {
-                error = [NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeSuboperationFailed userInfo:@{ FABCompoundOperationErrorUserInfoKeyUnderlyingErrors: self.errors }];
-            }
-            self.asyncCompletion(error);
+        NSError *error = nil;
+        if (self.errors.count > 0) {
+            error = [NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeSuboperationFailed userInfo:@{ FABCompoundOperationErrorUserInfoKeyUnderlyingErrors: self.errors }];
         }
+        [self finish:error];
     }
 }
 
