@@ -54,3 +54,8 @@ class AsyncOperation: FABAsyncOperation {
 ## License
 
 The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+
+## Notes
+
+You need to `git submodule update --init --recursive` after cloning the repo.

@@ -5,10 +5,7 @@
 //  Copyright © 2016 Twitter. All rights reserved.
 //
 
-#include "../vendor/xcconfig/CompilerFeatures.xcconfig"
-#include "../vendor/xcconfig/CompilerWarnings.xcconfig"
-#include "../vendor/xcconfig/PreprocessorDefinitions.xcconfig"
-#include "../vendor/xcconfig/Targets/Target.xcconfig"
+#include "../vendor/xcconfig/Targets/Apps/OSX-App.xcconfig"
 
 MAC_ARCHS = x86_64
 ARCHS = $MAC_ARCHS

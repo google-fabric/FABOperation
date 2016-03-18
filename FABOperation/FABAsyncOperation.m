@@ -28,8 +28,8 @@
     _internalExecuting = NO;
     _internalFinished = NO;
 
-    self.lock = [[NSRecursiveLock alloc] init];
-    self.lock.name = [NSString stringWithFormat:@"com.twitter.%@-lock", [self class]];
+    _lock = [[NSRecursiveLock alloc] init];
+    _lock.name = [NSString stringWithFormat:@"com.twitter.%@-lock", [self class]];;
 
     return self;
 }

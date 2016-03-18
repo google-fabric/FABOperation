@@ -6,123 +6,52 @@
 //
 
 import Cocoa
-import FABOperation
 
-protocol OperationStateChangeDelegate {
-    func operationBeganExecuting(operation: NSOperation)
-    func operationMainMethodFinished(operation: NSOperation)
-    func operationAsyncWorkCanceled(operation: NSOperation)
-    func operationAsyncWorkFinished(operation: NSOperation)
-}
+typealias OperationState = (description: String, color: NSColor, font: String)
 
-class SyncOperation: NSOperation {
-    var delegate: OperationStateChangeDelegate?
+let colors = [ NSColor.blackColor(), NSColor.blueColor(), NSColor.orangeColor(), NSColor.redColor(), NSColor.greenColor(), NSColor.grayColor(), NSColor.cyanColor(), NSColor.magentaColor(), NSColor.yellowColor() ]
 
-    override func main() {
-        self.delegate?.operationBeganExecuting(self)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.finish()
-        })
-        self.delegate?.operationMainMethodFinished(self)
-    }
-
-    private func finish() {
-        self.delegate?.operationAsyncWorkFinished(self)
-    }
-}
-
-class AsyncOperation: FABAsyncOperation {
-    var delegate: OperationStateChangeDelegate?
-
-    override func main() {
-        self.delegate?.operationBeganExecuting(self)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.finish()
-        })
-        self.delegate?.operationMainMethodFinished(self)
-    }
-
-    override func cancel() {
-        self.delegate?.operationAsyncWorkCanceled(self)
-        super.cancel()
-    }
-
-    private func finish() {
-        self.delegate?.operationAsyncWorkFinished(self)
-        self.markDone()
-        var error: NSError?
-        if self.cancelled {
-            error = NSError(domain: "com.twitter.FABOperationDemo.AsyncOperation.error-domain", code: 1, userInfo: [NSLocalizedDescriptionKey: "Operation cancelled"])
-        }
-        if let completion = self.asyncCompletion {
-            completion(error)
-        }
-    }
-}
+let urls = [ "https://upload.wikimedia.org/wikipedia/commons/c/c5/Number-One.JPG", "https://upload.wikimedia.org/wikipedia/commons/1/18/Roman_Numeral_2.gif", "https://upload.wikimedia.org/wikipedia/commons/0/0a/Number-three.JPG" ]
+var nextURLIndex = 0
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var urlField: NSTextField!
+    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var playButton: NSButton!
+    @IBOutlet weak var stopButton: NSButton!
 
-    private var output: [String] = []
+    private var output: [OperationState] = []
     private var queue = NSOperationQueue()
     private var syncOperationNumber = 1
     private var asyncOperationNumber = 1
+    private var compoundOperationNumber = 1
     private var observationContext = 0
+    private var currentColor = 0
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         self.tableView.setDataSource(self)
+        self.tableView.setDelegate(self)
         self.queue.maxConcurrentOperationCount = 1
+        self.queue.suspended = true
+        self.stopButton.enabled = false
     }
 
     // MARK: IBActions
 
-    @IBAction func addAsyncOperation(sender: NSButton) {
-        dispatch_async(dispatch_get_main_queue(), {
-            let asyncOperation = AsyncOperation()
-            asyncOperation.name = "async operation \(self.asyncOperationNumber)"
-            asyncOperation.completionBlock = {
-                self.addState("\(asyncOperation.name!) sync completion")
-            }
-            asyncOperation.asyncCompletion = { errorOptional in
-                if let error = errorOptional {
-                    self.addState("\(asyncOperation.name!) async completion with error: \(error.localizedDescription)")
-                } else {
-                    self.addState("\(asyncOperation.name!) async completion")
-                }
-            }
-
-            asyncOperation.delegate = self
-
-            self.asyncOperationNumber++
-            self.queue.addOperation(asyncOperation)
-        })
+    @IBAction func startQueue(sender: AnyObject) {
+        queue.suspended = false
+        playButton.enabled = false
+        stopButton.enabled = true
     }
 
-    private func addState(state: String) {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.output.append(state)
-            self.tableView.beginUpdates()
-            self.tableView.insertRowsAtIndexes(NSIndexSet(index: self.output.count - 1), withAnimation: .SlideDown)
-            self.tableView.endUpdates()
-        })
-    }
-
-    @IBAction func addSyncOperation(sender: NSButton) {
-        dispatch_async(dispatch_get_main_queue(), {
-            let syncOperation = SyncOperation()
-            syncOperation.name = "sync operation \(self.syncOperationNumber)"
-            syncOperation.completionBlock = {
-                self.addState("\(syncOperation.name!) sync completion")
-            }
-
-            syncOperation.delegate = self
-
-            self.syncOperationNumber++
-            self.queue.addOperation(syncOperation)
-        })
+    @IBAction func stopQueue(sender: AnyObject) {
+        queue.suspended = true
+        playButton.enabled = true
+        stopButton.enabled = false
     }
 
     @IBAction func queueConcurrencyChanged(sender: NSSegmentedControl) {
@@ -137,40 +66,144 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func clearDisplay(sender: NSButton) {
+        syncOperationNumber = 1
+        asyncOperationNumber = 1
+        compoundOperationNumber = 1
         self.output.removeAll()
         self.tableView.reloadData()
     }
+
+    // MARK: adding operations
+
+    @IBAction func addSyncOperation(sender: NSButton) {
+        dispatch_async(dispatch_get_main_queue(), {
+            let syncOperation = SyncOperation(url: urls[nextURLIndex % 3], imageView: self.imageView, color: colors[Int(self.currentColor++ % colors.count)], delegate: self, name: "sync operation \(self.syncOperationNumber)")
+            nextURLIndex += 1
+
+            self.syncOperationNumber += 1
+            self.addState(("\(syncOperation.name!) enqueued", syncOperation.color, "HelveticaNeue-Light"))
+            self.queue.addOperation(syncOperation)
+        })
+    }
+
+    @IBAction func addAsyncOperation(sender: NSButton) {
+        dispatch_async(dispatch_get_main_queue(), {
+            let name = "async operation \(self.asyncOperationNumber)"
+            let color = colors[Int(rand()) % colors.count]
+            let asyncOperation = AsyncOperation(url: urls[nextURLIndex % 3], imageView: self.imageView, color: color, delegate: self, name: name)
+            nextURLIndex += 1
+
+            self.asyncOperationNumber += 1
+            self.addState(("\(asyncOperation.name!) enqueued", asyncOperation.color, "HelveticaNeue-Light"))
+            self.queue.addOperation(asyncOperation)
+        })
+    }
+
+    @IBAction func addCompoundOperation(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue(), {
+            let name = "compound operation \(self.compoundOperationNumber)"
+            let compoundOperation = CompoundOperation(imageView: self.imageView, color: NSColor.blackColor(), delegate: self, name: name)
+            
+            self.addState(("\(name) enqueued", NSColor.blackColor(), "HelveticaNeue-Light"))
+            self.compoundOperationNumber += 1
+            self.queue.addOperation(compoundOperation)
+        })
+    }
+
+    // MARK: helpers
+
+    private func addState(state: OperationState) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.output.append(state)
+            self.tableView.beginUpdates()
+            self.tableView.insertRowsAtIndexes(NSIndexSet(index: self.output.count - 1), withAnimation: .SlideDown)
+            self.tableView.endUpdates()
+        })
+    }
+}
+
+// MARK: NSTableViewDelegate
+
+extension AppDelegate: NSTableViewDelegate {
+
+    func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+
+        let view = tableView.makeViewWithIdentifier("kRowID", owner: tableView) as? NSTableRowView ?? NSTableRowView(frame: NSZeroRect)
+
+        let label = NSTextView(frame: NSMakeRect(0, 0, 300, 24))
+        label.textStorage?.appendAttributedString(NSAttributedString(string: self.output[row].description, attributes: [NSForegroundColorAttributeName: self.output[row].color, NSFontAttributeName: NSFont(name: output[row].font, size: 24)!]))
+
+        return view
+    }
+
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 24
+    }
+
 }
 
 // MARK: NSTableViewDataSource
 
 extension AppDelegate: NSTableViewDataSource {
+
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return self.output.count
     }
 
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
-        return self.output[row]
+        return self.output[row].description
+    }
+
+    func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
+        let cellObject = cell as? NSCell
+        cellObject?.attributedStringValue = NSAttributedString(string: self.output[row].description, attributes: [NSForegroundColorAttributeName: self.output[row].color, NSFontAttributeName: NSFont(name: output[row].font, size: 18)!])
+
     }
 }
 
 // MARK: OperationStateChangeDelegate
 
 extension AppDelegate: OperationStateChangeDelegate {
+    func getColor(operation: NSOperation) -> NSColor {
+        if let sync = operation as? SyncOperation {
+            return sync.color
+        }
+        if let async = operation as? AsyncOperation {
+            return async.color
+        }
+        return NSColor.blackColor()
+    }
+
     func operationBeganExecuting(operation: NSOperation) {
-        self.addState("\(operation.name!) started")
+        self.addState(("\(operation.name!) started", getColor(operation), "HelveticaNeue"))
     }
 
     func operationMainMethodFinished(operation: NSOperation) {
-        self.addState("\(operation.name!) main method finished")
+        self.addState(("\(operation.name!) main method finished", getColor(operation), "HelveticaNeue"))
     }
 
     func operationAsyncWorkFinished(operation: NSOperation) {
-        self.addState("\(operation.name!) async work finished")
+        self.addState(("\(operation.name!) async work finished", getColor(operation), "HelveticaNeue"))
     }
 
     func operationAsyncWorkCanceled(operation: NSOperation) {
-        self.addState("\(operation.name!) async work canceled")
+        self.addState(("\(operation.name!) async work canceled", getColor(operation), "HelveticaNeue"))
+    }
+
+    func operationAsyncWorkFailed(operation: NSOperation) {
+        self.addState(("\(operation.name!) async work failed", getColor(operation), "HelveticaNeue"))
+    }
+
+    func operationAsyncCompletionCalled(operation: NSOperation) {
+        self.addState(("\(operation.name!) async completion", getColor(operation), "HelveticaNeue-BoldItalic"))
+    }
+
+    func operationSyncCompletionCalled(operation: NSOperation) {
+        self.addState(("\(operation.name!) sync completion", getColor(operation), "HelveticaNeue-Italic"))
+    }
+
+    func operationAsyncCompletionCalled(operation: NSOperation, withError error: NSError) {
+        self.addState(("\(operation.name!) async completion with error: \(error.localizedDescription)", getColor(operation), "HelveticaNeue-BoldItalic"))
     }
 }
 

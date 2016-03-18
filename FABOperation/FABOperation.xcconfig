@@ -11,3 +11,9 @@ GCC_PRECOMPILE_PREFIX_HEADER = NO
 GCC_PREFIX_HEADER =
 
 PRODUCT_BUNDLE_IDENTIFIER = com.twitter.FABOperation
+
+// we're just disabling code signing to ease bootstrapping here, try removing these to use the defaults or overwrite here if necessary
+CODE_SIGN_IDENTITY[sdk=iphone*] =
+CODE_SIGN_IDENTITY[sdk=macosx*] =
+CODE_SIGN_IDENTITY[sdk=appletv*] =
+CODE_SIGN_IDENTITY[sdk=watch*] =
