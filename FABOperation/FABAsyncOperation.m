@@ -123,4 +123,12 @@
     }];
 }
 
+#pragma mark - Protected
+- (void)finish:(NSError *)error {
+    [self markDone];
+    if (self.asyncCompletion) {
+        self.asyncCompletion(error);
+    }
+}
+
 @end

@@ -47,19 +47,14 @@ class AsyncOperation: FABAsyncOperation {
             self.session.invalidateAndCancel()
             if (response as? NSHTTPURLResponse)?.statusCode != 200 {
                 self.delegate.operationAsyncWorkFailed(self)
-                if let completion = self.asyncCompletion {
-                    completion(error ?? NSError(domain: "com.twitter.FABOperationDemo.AsyncOperation.error-domain", code: 1, userInfo: [NSLocalizedDescriptionKey: "Request 404'd"]))
-                }
+                self.finish(error ?? NSError(domain: "com.twitter.FABOperationDemo.AsyncOperation.error-domain", code: 1, userInfo: [NSLocalizedDescriptionKey: "Request 404'd"]))
             } else {
                 self.delegate.operationAsyncWorkFinished(self)
                 if let path = location?.path, data = NSData(contentsOfFile: path) {
                     self.imageView.image = NSImage(data: data)
                 }
-                if let completion = self.asyncCompletion {
-                    completion(nil)
-                }
+                self.finish(nil)
             }
-            self.markDone()
         }
 
         self.delegate.operationMainMethodFinished(self)
