@@ -30,9 +30,6 @@
 		E6B5657D1C262E6B003D4AC4 /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
 		E6B5657E1C262E6B003D4AC4 /* FABOperation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E6CD308E1C1A040500EAD3B2 /* FABOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E6CD308D1C1A040500EAD3B2 /* FABOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6E0E9C91C3C757B00DF3D23 /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
-		E6EC41D21C3C52710099366E /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
-		E6EC41D71C3C52790099366E /* FABOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6998C6D1B6852BE0018AFFC /* FABOperation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,27 +41,6 @@
 			remoteInfo = CLSAsyncOperation;
 		};
 		E6B5657F1C262E6B003D4AC4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E6998C641B6852BE0018AFFC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E6998C6C1B6852BE0018AFFC;
-			remoteInfo = FABOperation;
-		};
-		E6E0E9CA1C3C757D00DF3D23 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E6998C641B6852BE0018AFFC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E6998C6C1B6852BE0018AFFC;
-			remoteInfo = FABOperation;
-		};
-		E6EC41D51C3C52760099366E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E6998C641B6852BE0018AFFC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E6998C6C1B6852BE0018AFFC;
-			remoteInfo = FABOperation;
-		};
-		E6EC41D81C3C527C0099366E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E6998C641B6852BE0018AFFC /* Project object */;
 			proxyType = 1;
@@ -83,16 +59,6 @@
 				E6B5657E1C262E6B003D4AC4 /* FABOperation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC419E1C3C51F30099366E /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -130,9 +96,6 @@
 		E6CD308D1C1A040500EAD3B2 /* FABOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABOperation.h; sourceTree = "<group>"; };
 		E6D289F81C45872E007F8F67 /* xcconfig */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xcconfig; path = vendor/xcconfig; sourceTree = SOURCE_ROOT; };
 		E6EC40CA1C3C2B300099366E /* FABOperationDemo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FABOperationDemo.xcconfig; sourceTree = "<group>"; };
-		E6EC41561C3C51D70099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6EC41A31C3C51FF0099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6EC41BB1C3C520D0099366E /* FABOperation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,30 +130,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6EC41531C3C51D70099366E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6E0E9C91C3C757B00DF3D23 /* FABOperation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC41A01C3C51FF0099366E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6EC41D21C3C52710099366E /* FABOperation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC41B81C3C520D0099366E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6EC41D71C3C52790099366E /* FABOperation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -212,9 +151,6 @@
 				E6998C781B6852BE0018AFFC /* FABOperation.xctest */,
 				E6A296031C10D33800F82D06 /* libFABOperation.a */,
 				E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */,
-				E6EC41561C3C51D70099366E /* FABOperation.app */,
-				E6EC41A31C3C51FF0099366E /* FABOperation.app */,
-				E6EC41BB1C3C520D0099366E /* FABOperation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -387,61 +323,6 @@
 			productReference = E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E6EC41551C3C51D70099366E /* SmokeTest-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E6EC416A1C3C51D70099366E /* Build configuration list for PBXNativeTarget "SmokeTest-iOS" */;
-			buildPhases = (
-				E6EC41521C3C51D70099366E /* Sources */,
-				E6EC41531C3C51D70099366E /* Frameworks */,
-				E6EC41541C3C51D70099366E /* Resources */,
-				E6EC419E1C3C51F30099366E /* Embed Watch Content */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E6E0E9CB1C3C757D00DF3D23 /* PBXTargetDependency */,
-			);
-			name = "SmokeTest-iOS";
-			productName = "SmokeTest-iOS";
-			productReference = E6EC41561C3C51D70099366E /* FABOperation.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E6EC41A21C3C51FF0099366E /* SmokeTest-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E6EC41B41C3C51FF0099366E /* Build configuration list for PBXNativeTarget "SmokeTest-tvOS" */;
-			buildPhases = (
-				E6EC419F1C3C51FF0099366E /* Sources */,
-				E6EC41A01C3C51FF0099366E /* Frameworks */,
-				E6EC41A11C3C51FF0099366E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E6EC41D61C3C52760099366E /* PBXTargetDependency */,
-			);
-			name = "SmokeTest-tvOS";
-			productName = "SmokeTest-tvOS";
-			productReference = E6EC41A31C3C51FF0099366E /* FABOperation.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E6EC41BA1C3C520D0099366E /* SmokeTest-OSX */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E6EC41C91C3C520D0099366E /* Build configuration list for PBXNativeTarget "SmokeTest-OSX" */;
-			buildPhases = (
-				E6EC41B71C3C520D0099366E /* Sources */,
-				E6EC41B81C3C520D0099366E /* Frameworks */,
-				E6EC41B91C3C520D0099366E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E6EC41D91C3C527C0099366E /* PBXTargetDependency */,
-			);
-			name = "SmokeTest-OSX";
-			productName = "SmokeTest-OSX";
-			productReference = E6EC41BB1C3C520D0099366E /* FABOperation.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -465,15 +346,6 @@
 					E6B5656D1C2629E0003D4AC4 = {
 						CreatedOnToolsVersion = 7.2;
 					};
-					E6EC41551C3C51D70099366E = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					E6EC41A21C3C51FF0099366E = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					E6EC41BA1C3C520D0099366E = {
-						CreatedOnToolsVersion = 7.2;
-					};
 				};
 			};
 			buildConfigurationList = E6998C671B6852BE0018AFFC /* Build configuration list for PBXProject "FABOperation" */;
@@ -493,9 +365,6 @@
 				E6998C771B6852BE0018AFFC /* FABOperationTests */,
 				E6A296021C10D33800F82D06 /* libFABOperation */,
 				E6B5656D1C2629E0003D4AC4 /* FABOperationDemo */,
-				E6EC41551C3C51D70099366E /* SmokeTest-iOS */,
-				E6EC41A21C3C51FF0099366E /* SmokeTest-tvOS */,
-				E6EC41BA1C3C520D0099366E /* SmokeTest-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -521,27 +390,6 @@
 			files = (
 				E6B565731C2629E0003D4AC4 /* Assets.xcassets in Resources */,
 				E6B565761C2629E0003D4AC4 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC41541C3C51D70099366E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC41A11C3C51FF0099366E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC41B91C3C520D0099366E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,27 +437,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6EC41521C3C51D70099366E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC419F1C3C51FF0099366E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6EC41B71C3C520D0099366E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -622,21 +449,6 @@
 			isa = PBXTargetDependency;
 			target = E6998C6C1B6852BE0018AFFC /* FABOperation */;
 			targetProxy = E6B5657F1C262E6B003D4AC4 /* PBXContainerItemProxy */;
-		};
-		E6E0E9CB1C3C757D00DF3D23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E6998C6C1B6852BE0018AFFC /* FABOperation */;
-			targetProxy = E6E0E9CA1C3C757D00DF3D23 /* PBXContainerItemProxy */;
-		};
-		E6EC41D61C3C52760099366E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E6998C6C1B6852BE0018AFFC /* FABOperation */;
-			targetProxy = E6EC41D51C3C52760099366E /* PBXContainerItemProxy */;
-		};
-		E6EC41D91C3C527C0099366E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E6998C6C1B6852BE0018AFFC /* FABOperation */;
-			targetProxy = E6EC41D81C3C527C0099366E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -742,42 +554,6 @@
 			};
 			name = Release;
 		};
-		E6EC416B1C3C51D70099366E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		E6EC416C1C3C51D70099366E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		E6EC41B51C3C51FF0099366E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		E6EC41B61C3C51FF0099366E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		E6EC41CA1C3C520D0099366E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		E6EC41CB1C3C520D0099366E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -822,33 +598,6 @@
 			buildConfigurations = (
 				E6B565781C2629E0003D4AC4 /* Debug */,
 				E6B565791C2629E0003D4AC4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E6EC416A1C3C51D70099366E /* Build configuration list for PBXNativeTarget "SmokeTest-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E6EC416B1C3C51D70099366E /* Debug */,
-				E6EC416C1C3C51D70099366E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E6EC41B41C3C51FF0099366E /* Build configuration list for PBXNativeTarget "SmokeTest-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E6EC41B51C3C51FF0099366E /* Debug */,
-				E6EC41B61C3C51FF0099366E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E6EC41C91C3C520D0099366E /* Build configuration list for PBXNativeTarget "SmokeTest-OSX" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E6EC41CA1C3C520D0099366E /* Debug */,
-				E6EC41CB1C3C520D0099366E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
