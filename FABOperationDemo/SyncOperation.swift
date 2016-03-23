@@ -34,17 +34,7 @@ class SyncOperation: NSOperation {
     override func main() {
         self.delegate.operationBeganExecuting(self)
 
-        requestWithCompletion() { location, response, error in
-            self.session.invalidateAndCancel()
-            if (response as! NSHTTPURLResponse).statusCode != 200 || error != nil {
-                self.delegate.operationAsyncWorkFailed(self)
-            } else {
-                if let path = location?.path, data = NSData(contentsOfFile: path) {
-                    self.imageView.image = NSImage(data: data)
-                }
-                self.delegate.operationAsyncWorkFinished(self)
-            }
-        }
+        requestWithCompletion(handleRequest)
 
         self.delegate.operationMainMethodFinished(self)
     }
@@ -52,11 +42,26 @@ class SyncOperation: NSOperation {
     func requestWithCompletion(completion: (NSURL?, NSURLResponse?, NSError?) -> Void) {
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         session = NSURLSession(configuration: config, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
-        let request = NSURLRequest(URL: NSURL(string: self.url.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()))!)
+        let request = NSURLRequest(URL: NSURL(string: self.url.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()))!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringCacheData, timeoutInterval: 10)
         downloadTask = session.downloadTaskWithRequest(request, completionHandler: completion)
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC) * Int64(rand() % 3 + 1)), dispatch_get_main_queue()) {
             self.downloadTask.resume()
         }
+    }
+
+    func handleRequest(location: NSURL?, response: NSURLResponse?, error: NSError?) {
+        self.session.invalidateAndCancel()
+        if let httpResponse = response as? NSHTTPURLResponse {
+            if httpResponse.statusCode != 200 || error != nil {
+                self.delegate.operationAsyncWorkFailed(self)
+                return
+            }
+        }
+        if let path = location?.path, data = NSData(contentsOfFile: path) {
+            self.imageView.image = NSImage(data: data)
+        }
+        self.delegate.operationAsyncWorkFinished(self)
+
     }
 
     override func cancel() {

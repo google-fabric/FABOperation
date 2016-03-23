@@ -43,19 +43,7 @@ class AsyncOperation: FABAsyncOperation {
     override func main() {
         self.delegate.operationBeganExecuting(self)
 
-        requestWithCompletion() { location, response, error in
-            self.session.invalidateAndCancel()
-            if (response as? NSHTTPURLResponse)?.statusCode != 200 {
-                self.delegate.operationAsyncWorkFailed(self)
-                self.finish(error ?? NSError(domain: "com.twitter.FABOperationDemo.AsyncOperation.error-domain", code: 1, userInfo: [NSLocalizedDescriptionKey: "Request 404'd"]))
-            } else {
-                self.delegate.operationAsyncWorkFinished(self)
-                if let path = location?.path, data = NSData(contentsOfFile: path) {
-                    self.imageView.image = NSImage(data: data)
-                }
-                self.finish(nil)
-            }
-        }
+        requestWithCompletion(handleCompletion)
 
         self.delegate.operationMainMethodFinished(self)
     }
@@ -67,6 +55,20 @@ class AsyncOperation: FABAsyncOperation {
         downloadTask = session.downloadTaskWithRequest(request, completionHandler: completion)
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC) * Int64(rand() % 3 + 1)), dispatch_get_main_queue()) {
             self.downloadTask.resume()
+        }
+    }
+
+    func handleCompletion(location: NSURL?, response: NSURLResponse?, error: NSError?) {
+        self.session.invalidateAndCancel()
+        if (response as? NSHTTPURLResponse)?.statusCode != 200 {
+            self.delegate.operationAsyncWorkFailed(self)
+            self.finish(error ?? NSError(domain: "com.twitter.FABOperationDemo.AsyncOperation.error-domain", code: 1, userInfo: [NSLocalizedDescriptionKey: "Request 404'd"]))
+        } else {
+            self.delegate.operationAsyncWorkFinished(self)
+            if let path = location?.path, data = NSData(contentsOfFile: path) {
+                self.imageView.image = NSImage(data: data)
+            }
+            self.finish(nil)
         }
     }
 
