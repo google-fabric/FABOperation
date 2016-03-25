@@ -124,7 +124,7 @@
 }
 
 #pragma mark - Protected
-- (void)finish:(NSError *)error {
+- (void)finishWithError:(NSError *)error {
     if (self.asyncCompletion) {
         self.asyncCompletion(error);
     }

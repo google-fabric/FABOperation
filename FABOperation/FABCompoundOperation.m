@@ -129,14 +129,14 @@ static char *const FABCompoundOperationCountingQueueLabel = "com.twitter.FABComp
 
 - (void)attemptCompoundCompletion {
     if (self.isCancelled) {
-        [self finish:[NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeCancelled userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"%@ cancelled", self.name]}]];
+        [self finishWithError:[NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeCancelled userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"%@ cancelled", self.name]}]];
         self.asyncCompletion = nil;
     } else if (self.completedOperations + self.errors.count == self.operations.count) {
         NSError *error = nil;
         if (self.errors.count > 0) {
             error = [NSError errorWithDomain:FABCompoundOperationErrorDomain code:FABCompoundOperationErrorCodeSuboperationFailed userInfo:@{ FABCompoundOperationErrorUserInfoKeyUnderlyingErrors: self.errors }];
         }
-        [self finish:error];
+        [self finishWithError:error];
     }
 }
 
