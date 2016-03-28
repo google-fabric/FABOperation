@@ -124,11 +124,11 @@
 }
 
 #pragma mark - Protected
-- (void)finish:(NSError *)error {
-    [self markDone];
+- (void)finishWithError:(NSError *)error {
     if (self.asyncCompletion) {
         self.asyncCompletion(error);
     }
+    [self markDone];
 }
 
 @end

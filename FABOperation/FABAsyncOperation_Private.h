@@ -14,6 +14,6 @@
  *  @note as soon as this method is called, @c NSOperation's standard @c completionBlock will be executed if one exists, as a result of setting the operation's isFinished property to YES, and the asyncCompletion block is called.
  *  @param error Any error to pass to asyncCompletion, or nil if there is none.
  */
-- (void)finish:(NSError *__nullable)error;
+- (void)finishWithError:(NSError *__nullable)error;
 
 @end
