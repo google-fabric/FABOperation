@@ -331,7 +331,7 @@
 			attributes = {
 				CLASSPREFIX = FAB;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Twitter;
 				TargetAttributes = {
 					E6998C6C1B6852BE0018AFFC = {
