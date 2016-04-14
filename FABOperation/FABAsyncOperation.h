@@ -14,13 +14,13 @@ typedef void(^FABAsyncOperationCompletionBlock)(NSError *__nullable error);
 
 /**
  *  FABAsyncOperation is a subclass of NSOperation that allows for asynchronous work to be performed, for things like networking, IPC or UI-driven logic. Create your own subclasses to encapsulate custom logic.
- *  @warning When subclassing to create your own operations, be sure to call -[markDone] at some point, or program execution will hang. 
- *  @see -[markDone] in FABAsyncOperation_Private.h
+ *  @warning When subclassing to create your own operations, be sure to call -[finishWithError:] at some point, or program execution will hang. 
+ *  @see -[finishWithError:] in FABAsyncOperation_Private.h
  */
 @interface FABAsyncOperation : NSOperation
 
 /**
- *  Add a callback method for consumers of your subclasses to set when the asynchronous work is marked as complete with -[markDone].
+ *  Add a callback method for consumers of your subclasses to set when the asynchronous work is marked as complete with -[finishWithError:].
  */
 @property (copy, nonatomic, nullable) FABAsyncOperationCompletionBlock asyncCompletion;
 
