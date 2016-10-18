@@ -8,12 +8,12 @@
 
 import Cocoa
 
-class SyncOperation: NSOperation {
+class SyncOperation: Operation {
     var delegate: OperationStateChangeDelegate!
     var url: String
     var imageView: NSImageView
-    var session: NSURLSession!
-    var downloadTask: NSURLSessionDownloadTask!
+    var session: URLSession!
+    var downloadTask: URLSessionDownloadTask!
     var color: NSColor
 
     init(url: String, imageView: NSImageView, color: NSColor, delegate: OperationStateChangeDelegate, name: String) {
@@ -27,40 +27,40 @@ class SyncOperation: NSOperation {
         self.name = name
 
         self.completionBlock = {
-            self.delegate.operationSyncCompletionCalled(self)
+            self.delegate.operationSyncCompletionCalled(operation: self)
         }
     }
 
     override func main() {
-        self.delegate.operationBeganExecuting(self)
+        self.delegate.operationBeganExecuting(operation: self)
 
-        requestWithCompletion(handleRequest)
+        requestWithCompletion(completion: handleRequest)
 
-        self.delegate.operationMainMethodFinished(self)
+        self.delegate.operationMainMethodFinished(operation: self)
     }
 
-    func requestWithCompletion(completion: (NSURL?, NSURLResponse?, NSError?) -> Void) {
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        session = NSURLSession(configuration: config, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
-        let request = NSURLRequest(URL: NSURL(string: self.url.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()))!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringCacheData, timeoutInterval: 10)
-        downloadTask = session.downloadTaskWithRequest(request, completionHandler: completion)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC) * Int64(rand() % 3 + 1)), dispatch_get_main_queue()) {
+    func requestWithCompletion(completion: @escaping (URL?, URLResponse?, Error?) -> Void) {
+        let config = URLSessionConfiguration.default
+        session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
+        let request = NSURLRequest(url: NSURL(string: (self.url as NSString).trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines))! as URL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 10)
+        downloadTask = session.downloadTask(with: request as URLRequest, completionHandler: completion)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(arc4random_uniform(3) + 1))) {
             self.downloadTask.resume()
         }
     }
 
-    func handleRequest(location: NSURL?, response: NSURLResponse?, error: NSError?) {
+    func handleRequest(location: URL?, response: URLResponse?, error: Error?) {
         self.session.invalidateAndCancel()
-        if let httpResponse = response as? NSHTTPURLResponse {
+        if let httpResponse = response as? HTTPURLResponse {
             if httpResponse.statusCode != 200 || error != nil {
-                self.delegate.operationAsyncWorkFailed(self)
+                self.delegate.operationAsyncWorkFailed(operation: self)
                 return
             }
         }
-        if let path = location?.path, data = NSData(contentsOfFile: path) {
-            self.imageView.image = NSImage(data: data)
+        if let path = location?.path, let data = NSData(contentsOfFile: path) {
+            self.imageView.image = NSImage(data: data as Data)
         }
-        self.delegate.operationAsyncWorkFinished(self)
+        self.delegate.operationAsyncWorkFinished(operation: self)
 
     }
 
@@ -71,7 +71,7 @@ class SyncOperation: NSOperation {
         if session != nil {
             session.invalidateAndCancel()
         }
-        self.delegate.operationAsyncWorkCanceled(self)
+        self.delegate.operationAsyncWorkCanceled(operation: self)
         super.cancel()
     }
 }

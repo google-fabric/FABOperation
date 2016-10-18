@@ -18,13 +18,12 @@ const NSUInteger FABTestAsyncOperationErrorCodeCancelled = 12345;
 }
 
 - (void)finishWork {
-    [self markDone];
     if (self.asyncCompletion) {
         NSError *error;
         if (self.isCancelled) {
             error = [NSError errorWithDomain:@"com.FABInFlightCancellationTests.error-domain" code:FABTestAsyncOperationErrorCodeCancelled userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"%@ cancelled", self.name]}];
         }
-        self.asyncCompletion(error);
+        [self finishWithError:error];
     }
 }
 

@@ -22,42 +22,42 @@ class CompoundOperation: FABCompoundOperation {
         super.init()
 
         self.completionBlock = {
-            delegate.operationSyncCompletionCalled(self)
+            delegate.operationSyncCompletionCalled(operation: self)
         }
 
         self.asyncCompletion = { errorOptional in
             if let error = errorOptional {
-                delegate.operationAsyncCompletionCalled(self, withError: error)
+                delegate.operationAsyncCompletionCalled(operation: self, withError: error as NSError)
             } else {
-                delegate.operationAsyncCompletionCalled(self)
+                delegate.operationAsyncCompletionCalled(operation: self)
             }
         }
 
         self.name = name
         self.compoundQueue.maxConcurrentOperationCount = 1
 
-        let op1 = AsyncOperation(url: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Number-One.JPG", imageView: imageView, color: NSColor.blueColor(), delegate: delegate, name: "\(name) async suboperation 1")
+        let op1 = AsyncOperation(url: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Number-One.JPG", imageView: imageView, color: NSColor.blue, delegate: delegate, name: "\(name) async suboperation 1")
         op1.asyncCompletion = { error in
-            delegate.operationAsyncCompletionCalled(op1)
+            delegate.operationAsyncCompletionCalled(operation: op1)
         }
         op1.completionBlock = {
-            delegate.operationSyncCompletionCalled(op1)
+            delegate.operationSyncCompletionCalled(operation: op1)
         }
 
-        let op2 = AsyncOperation(url: "https://upload.wikimedia.org/wikipedia/commons/1/18/Roman_Numeral_2.gif", imageView: imageView, color: NSColor.redColor(), delegate: delegate, name: "\(name) async suboperation 2")
+        let op2 = AsyncOperation(url: "https://upload.wikimedia.org/wikipedia/commons/1/18/Roman_Numeral_2.gif", imageView: imageView, color: NSColor.red, delegate: delegate, name: "\(name) async suboperation 2")
         op2.asyncCompletion = { error in
-            delegate.operationAsyncCompletionCalled(op2)
+            delegate.operationAsyncCompletionCalled(operation: op2)
         }
         op2.completionBlock = {
-            delegate.operationSyncCompletionCalled(op2)
+            delegate.operationSyncCompletionCalled(operation: op2)
         }
 
-        let op3 = AsyncOperation(url: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Number-three.JPG", imageView: imageView, color: NSColor.orangeColor(), delegate: delegate, name: "\(name) async suboperation 3")
+        let op3 = AsyncOperation(url: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Number-three.JPG", imageView: imageView, color: NSColor.orange, delegate: delegate, name: "\(name) async suboperation 3")
         op3.asyncCompletion = { error in
-            delegate.operationAsyncCompletionCalled(op3)
+            delegate.operationAsyncCompletionCalled(operation: op3)
         }
         op3.completionBlock = {
-            delegate.operationSyncCompletionCalled(op3)
+            delegate.operationSyncCompletionCalled(operation: op3)
         }
         
         self.operations = [ op1, op2, op3 ]

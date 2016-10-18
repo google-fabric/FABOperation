@@ -13,8 +13,8 @@ class AsyncOperation: FABAsyncOperation {
     var delegate: OperationStateChangeDelegate!
     var url: String
     var imageView: NSImageView
-    var session: NSURLSession!
-    var downloadTask: NSURLSessionDownloadTask!
+    var session: URLSession!
+    var downloadTask: URLSessionDownloadTask!
     var color: NSColor
 
     init(url: String, imageView: NSImageView, color: NSColor, delegate: OperationStateChangeDelegate, name: String) {
@@ -28,47 +28,47 @@ class AsyncOperation: FABAsyncOperation {
         self.name = name
 
         self.completionBlock = {
-            self.delegate.operationSyncCompletionCalled(self)
+            self.delegate.operationSyncCompletionCalled(operation: self)
         }
 
         self.asyncCompletion = { errorOptional in
             if let error = errorOptional {
-                self.delegate.operationAsyncCompletionCalled(self, withError: error)
+                self.delegate.operationAsyncCompletionCalled(operation: self, withError: error as NSError)
             } else {
-                self.delegate.operationAsyncCompletionCalled(self)
+                self.delegate.operationAsyncCompletionCalled(operation: self)
             }
         }
     }
 
     override func main() {
-        self.delegate.operationBeganExecuting(self)
+        self.delegate.operationBeganExecuting(operation: self)
 
-        requestWithCompletion(handleCompletion)
+        requestWithCompletion(completion: handleCompletion)
 
-        self.delegate.operationMainMethodFinished(self)
+        self.delegate.operationMainMethodFinished(operation: self)
     }
 
-    func requestWithCompletion(completion: (NSURL?, NSURLResponse?, NSError?) -> Void) {
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        session = NSURLSession(configuration: config, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
-        let request = NSURLRequest(URL: NSURL(string: self.url)!)
-        downloadTask = session.downloadTaskWithRequest(request, completionHandler: completion)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC) * Int64(rand() % 3 + 1)), dispatch_get_main_queue()) {
+    func requestWithCompletion(completion: @escaping (URL?, URLResponse?, Error?) -> Void) {
+        let config = URLSessionConfiguration.default
+        session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
+        let request = NSURLRequest(url: NSURL(string: self.url)! as URL)
+        downloadTask = session.downloadTask(with: request as URLRequest, completionHandler: completion)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(arc4random_uniform(3) + 1))) {
             self.downloadTask.resume()
         }
     }
 
-    func handleCompletion(location: NSURL?, response: NSURLResponse?, error: NSError?) {
+    func handleCompletion(location: URL?, response: URLResponse?, error: Error?) {
         self.session.invalidateAndCancel()
-        if (response as? NSHTTPURLResponse)?.statusCode != 200 {
-            self.delegate.operationAsyncWorkFailed(self)
-            self.finish(error ?? NSError(domain: "com.twitter.FABOperationDemo.AsyncOperation.error-domain", code: 1, userInfo: [NSLocalizedDescriptionKey: "Request 404'd"]))
+        if (response as? HTTPURLResponse)?.statusCode != 200 {
+            self.delegate.operationAsyncWorkFailed(operation: self)
+            self.finishWithError(error ?? NSError(domain: "com.twitter.FABOperationDemo.AsyncOperation.error-domain", code: 1, userInfo: [NSLocalizedDescriptionKey: "Request 404'd"]))
         } else {
-            self.delegate.operationAsyncWorkFinished(self)
-            if let path = location?.path, data = NSData(contentsOfFile: path) {
-                self.imageView.image = NSImage(data: data)
+            self.delegate.operationAsyncWorkFinished(operation: self)
+            if let path = location?.path, let data = NSData(contentsOfFile: path) {
+                self.imageView.image = NSImage(data: data as Data)
             }
-            self.finish(nil)
+            self.finishWithError(nil)
         }
     }
 
@@ -79,7 +79,7 @@ class AsyncOperation: FABAsyncOperation {
         if session != nil {
             session.invalidateAndCancel()
         }
-        self.delegate.operationAsyncWorkCanceled(self)
+        self.delegate.operationAsyncWorkCanceled(operation: self)
         super.cancel()
     }
 }
