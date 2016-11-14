@@ -10,12 +10,12 @@ import Cocoa
 import FABOperation
 
 protocol OperationStateChangeDelegate {
-    func operationBeganExecuting(operation: NSOperation)
-    func operationMainMethodFinished(operation: NSOperation)
-    func operationAsyncWorkCanceled(operation: NSOperation)
-    func operationAsyncWorkFinished(operation: NSOperation)
-    func operationAsyncWorkFailed(operation: NSOperation)
-    func operationSyncCompletionCalled(operation: NSOperation)
-    func operationAsyncCompletionCalled(operation: NSOperation)
-    func operationAsyncCompletionCalled(operation: NSOperation, withError error: NSError)
+    func operationBeganExecuting(operation: Operation)
+    func operationMainMethodFinished(operation: Operation)
+    func operationAsyncWorkCanceled(operation: Operation)
+    func operationAsyncWorkFinished(operation: Operation)
+    func operationAsyncWorkFailed(operation: Operation)
+    func operationSyncCompletionCalled(operation: Operation)
+    func operationAsyncCompletionCalled(operation: Operation)
+    func operationAsyncCompletionCalled(operation: Operation, withError error: NSError)
 }

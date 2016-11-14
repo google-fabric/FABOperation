@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
             <connections>
-                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="rJj-ZC-QEv"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -676,7 +675,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -691,7 +690,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="addAsyncOperation:" target="Voe-Tx-rLC" id="Cer-fv-u5G"/>
+                            <action selector="addAsyncOperationWithSender:" target="Voe-Tx-rLC" id="UUo-I2-gfH"/>
                         </connections>
                     </button>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeF-mg-sCR">
@@ -701,7 +700,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" id="iJa-26-MQa">
-                                    <rect key="frame" x="0.0" y="0.0" width="328" height="19"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="275"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -723,7 +722,6 @@
                                     </tableColumns>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="277" id="OCs-y2-CDp"/>
@@ -748,7 +746,7 @@
                             </segments>
                         </segmentedCell>
                         <connections>
-                            <action selector="queueConcurrencyChanged:" target="Voe-Tx-rLC" id="UMz-LA-yx0"/>
+                            <action selector="queueConcurrencyChangedWithSender:" target="Voe-Tx-rLC" id="Ari-Q8-Wae"/>
                         </connections>
                     </segmentedControl>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zu6-IX-pEq">
@@ -758,7 +756,7 @@
                             <font key="font" metaFont="smallSystem"/>
                         </buttonCell>
                         <connections>
-                            <action selector="addCompoundOperation:" target="Voe-Tx-rLC" id="nwH-EG-URW"/>
+                            <action selector="addCompoundOperationWithSender:" target="Voe-Tx-rLC" id="A0k-MO-G8r"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vn3-2F-G8Q">
@@ -771,7 +769,7 @@ Gw
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="cancelCurrentOperation:" target="Voe-Tx-rLC" id="mo8-co-qSq"/>
+                            <action selector="cancelCurrentOperationWithSender:" target="Voe-Tx-rLC" id="KqG-Dj-3um"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vvz-ms-bDF">
@@ -781,7 +779,7 @@ Gw
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="clearDisplay:" target="Voe-Tx-rLC" id="UOT-zF-oD5"/>
+                            <action selector="clearDisplayWithSender:" target="Voe-Tx-rLC" id="C7C-2g-zhj"/>
                         </connections>
                     </button>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jgc-hz-EJP">
@@ -799,7 +797,7 @@ Gw
                             <font key="font" size="13" name=".LucidaGrandeUI"/>
                         </buttonCell>
                         <connections>
-                            <action selector="startQueue:" target="Voe-Tx-rLC" id="X05-iI-kQK"/>
+                            <action selector="startQueueWithSender:" target="Voe-Tx-rLC" id="fOb-Bs-wpw"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SPh-VB-RtG">
@@ -809,7 +807,7 @@ Gw
                             <font key="font" size="13" name=".AppleSDGothicNeoI-Regular"/>
                         </buttonCell>
                         <connections>
-                            <action selector="stopQueue:" target="Voe-Tx-rLC" id="fiv-pk-gm9"/>
+                            <action selector="stopQueueWithSender:" target="Voe-Tx-rLC" id="1rI-0a-Xkt"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wpu-Xy-uAN">
@@ -822,7 +820,7 @@ Gw
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="addSyncOperation:" target="Voe-Tx-rLC" id="NOH-dB-jID"/>
+                            <action selector="addSyncOperationWithSender:" target="Voe-Tx-rLC" id="7L7-hI-8nW"/>
                         </connections>
                     </button>
                 </subviews>
