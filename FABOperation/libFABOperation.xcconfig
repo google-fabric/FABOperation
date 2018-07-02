@@ -14,3 +14,5 @@ CODE_SIGN_IDENTITY[sdk=iphone*] =
 CODE_SIGN_IDENTITY[sdk=macosx*] =
 CODE_SIGN_IDENTITY[sdk=appletv*] =
 CODE_SIGN_IDENTITY[sdk=watch*] =
+
+CLANG_MODULES_AUTOLINK = NO
