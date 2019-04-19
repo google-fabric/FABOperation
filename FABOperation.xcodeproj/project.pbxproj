@@ -87,7 +87,7 @@
 		E6998C8A1B6852DA0018AFFC /* FABAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABAsyncOperation.m; sourceTree = "<group>"; };
 		E6998C8B1B6852DA0018AFFC /* FABCompoundOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABCompoundOperation.h; sourceTree = "<group>"; };
 		E6998C8C1B6852DA0018AFFC /* FABCompoundOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABCompoundOperation.m; sourceTree = "<group>"; };
-		E6A296031C10D33800F82D06 /* libFABOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFABOperation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A296031C10D33800F82D06 /* libFABOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFABOperation.a; path = liblibFABOperation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B5656E1C2629E0003D4AC4 /* FABOperationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FABOperationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B565701C2629E0003D4AC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6B565721C2629E0003D4AC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -331,7 +331,7 @@
 			attributes = {
 				CLASSPREFIX = FAB;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Twitter;
 				TargetAttributes = {
 					E6998C6C1B6852BE0018AFFC = {
